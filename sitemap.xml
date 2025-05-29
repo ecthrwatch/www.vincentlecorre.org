@@ -2,47 +2,6 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://www.vincentlecorre.org/fr/</loc><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://www.vincentlecorre.org/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://www.vincentlecorre.org/en/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://www.vincentlecorre.org/pl/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://www.vincentlecorre.org/zh-tw/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://www.vincentlecorre.org/zh-cn/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="fr"
-                        href="https://www.vincentlecorre.fr/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="pl"
-                        href="https://pl.vincentlecorre.org/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="https://www.lushengqiao.org/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-tw"
-                        href="https://zh-hant.lushengqiao.org/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://www.vincentlecorre.org/fr/"
-                    /></url><url>
             <loc>https://www.vincentlecorre.org/categories/</loc><xhtml:link
                         rel="alternate"
                         hreflang="fr"
@@ -60,35 +19,11 @@
                         hreflang="zh-tw"
                         href="https://zh-hant.lushengqiao.org/categories/"
                         /><xhtml:link
-                        rel="alternate"
-                        hreflang="zh"
-                        href="https://example.org/categories/"
-                        /><xhtml:link
                     rel="alternate"
                     hreflang="en"
                     href="https://www.vincentlecorre.org/categories/"
                     /></url><url>
             <loc>https://www.vincentlecorre.org/</loc><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://www.vincentlecorre.org/fr/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://www.vincentlecorre.org/en/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://www.vincentlecorre.org/pl/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://www.vincentlecorre.org/zh-tw/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://www.vincentlecorre.org/zh-cn/"
-                        /><xhtml:link
                         rel="alternate"
                         hreflang="fr"
                         href="https://www.vincentlecorre.fr/"
@@ -109,88 +44,6 @@
                     hreflang="en"
                     href="https://www.vincentlecorre.org/"
                     /></url><url>
-            <loc>https://www.vincentlecorre.org/en/</loc><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://www.vincentlecorre.org/fr/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://www.vincentlecorre.org/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://www.vincentlecorre.org/pl/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://www.vincentlecorre.org/zh-tw/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://www.vincentlecorre.org/zh-cn/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="fr"
-                        href="https://www.vincentlecorre.fr/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="pl"
-                        href="https://pl.vincentlecorre.org/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="https://www.lushengqiao.org/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-tw"
-                        href="https://zh-hant.lushengqiao.org/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://www.vincentlecorre.org/en/"
-                    /></url><url>
-            <loc>https://www.vincentlecorre.org/pl/</loc><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://www.vincentlecorre.org/fr/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://www.vincentlecorre.org/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://www.vincentlecorre.org/en/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://www.vincentlecorre.org/zh-tw/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://www.vincentlecorre.org/zh-cn/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="fr"
-                        href="https://www.vincentlecorre.fr/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="pl"
-                        href="https://pl.vincentlecorre.org/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="https://www.lushengqiao.org/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-tw"
-                        href="https://zh-hant.lushengqiao.org/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://www.vincentlecorre.org/pl/"
-                    /></url><url>
             <loc>https://www.vincentlecorre.org/tags/</loc><xhtml:link
                         rel="alternate"
                         hreflang="fr"
@@ -208,93 +61,7 @@
                         hreflang="zh-tw"
                         href="https://zh-hant.lushengqiao.org/tags/"
                         /><xhtml:link
-                        rel="alternate"
-                        hreflang="zh"
-                        href="https://example.org/tags/"
-                        /><xhtml:link
                     rel="alternate"
                     hreflang="en"
                     href="https://www.vincentlecorre.org/tags/"
-                    /></url><url>
-            <loc>https://www.vincentlecorre.org/zh-tw/</loc><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://www.vincentlecorre.org/fr/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://www.vincentlecorre.org/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://www.vincentlecorre.org/en/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://www.vincentlecorre.org/pl/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://www.vincentlecorre.org/zh-cn/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="fr"
-                        href="https://www.vincentlecorre.fr/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="pl"
-                        href="https://pl.vincentlecorre.org/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="https://www.lushengqiao.org/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-tw"
-                        href="https://zh-hant.lushengqiao.org/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://www.vincentlecorre.org/zh-tw/"
-                    /></url><url>
-            <loc>https://www.vincentlecorre.org/zh-cn/</loc><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://www.vincentlecorre.org/fr/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://www.vincentlecorre.org/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://www.vincentlecorre.org/en/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://www.vincentlecorre.org/pl/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://www.vincentlecorre.org/zh-tw/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="fr"
-                        href="https://www.vincentlecorre.fr/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="pl"
-                        href="https://pl.vincentlecorre.org/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="https://www.lushengqiao.org/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-tw"
-                        href="https://zh-hant.lushengqiao.org/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://www.vincentlecorre.org/zh-cn/"
                     /></url></urlset>
