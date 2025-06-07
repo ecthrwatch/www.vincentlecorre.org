@@ -2,7 +2,7 @@
     <channel>
         <title>Vincent Le Corre</title>
         <link>https://www.vincentlecorre.org/</link>
-        <description>Personal website of Vincent Le Corre (US)</description>
+        <description>Personal website of Vincent Le Corre</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language>
             <atom:link href="https://www.vincentlecorre.org/index.xml" rel="self" type="application/rss+xml" />
         </channel>
