@@ -1,0 +1,11 @@
+/* Force square avatar image */
+.home .home-profile .home-avatar img {
+  border-radius: 10px !important;
+  -webkit-border-radius: 10px !important;
+}
+
+/* Make avatar 50% larger */
+.home .home-profile .home-avatar img {
+  width: 192px !important;
+  height: 192px !important;
+}

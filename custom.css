@@ -1,0 +1,5 @@
+/* Force square avatar image */
+.home .home-profile .home-avatar img {
+  border-radius: 0 !important;
+  -webkit-border-radius: 0 !important;
+}

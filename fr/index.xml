@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Accueil on Vincent Le Corre</title>
-    <link>https://www.vincentlecorre.org/fr/</link>
+    <link>http://localhost:1322/fr/</link>
     <description>Recent content in Accueil on Vincent Le Corre</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="https://www.vincentlecorre.org/fr/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1322/fr/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

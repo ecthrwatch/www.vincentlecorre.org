@@ -28,16 +28,16 @@
                         href="https://www.lushengqiao.com/categories/"
                         /><xhtml:link
                         rel="alternate"
-                        hreflang="ja"
-                        href="https://ja.vincentlecorre.org/categories/"
-                        /><xhtml:link
-                        rel="alternate"
                         hreflang="zh-tw"
                         href="https://zh-hant.lushengqiao.com/categories/"
                         /><xhtml:link
                         rel="alternate"
                         hreflang="hi"
                         href="https://hi.vincentlecorre.org/categories/"
+                        /><xhtml:link
+                        rel="alternate"
+                        hreflang="ja"
+                        href="https://ja.vincentlecorre.org/categories/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
@@ -59,6 +59,14 @@
                         rel="alternate"
                         hreflang="zh-tw"
                         href="https://zh-hant.lushengqiao.com/"
+                        /><xhtml:link
+                        rel="alternate"
+                        hreflang="hi"
+                        href="https://hi.vincentlecorre.org/"
+                        /><xhtml:link
+                        rel="alternate"
+                        hreflang="ja"
+                        href="https://ja.vincentlecorre.org/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
@@ -90,16 +98,16 @@
                         href="https://www.lushengqiao.com/tags/"
                         /><xhtml:link
                         rel="alternate"
-                        hreflang="ja"
-                        href="https://ja.vincentlecorre.org/tags/"
-                        /><xhtml:link
-                        rel="alternate"
                         hreflang="zh-tw"
                         href="https://zh-hant.lushengqiao.com/tags/"
                         /><xhtml:link
                         rel="alternate"
                         hreflang="hi"
                         href="https://hi.vincentlecorre.org/tags/"
+                        /><xhtml:link
+                        rel="alternate"
+                        hreflang="ja"
+                        href="https://ja.vincentlecorre.org/tags/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
