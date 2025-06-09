@@ -49,8 +49,20 @@
                         href="https://www.vincentlecorre.fr/"
                         /><xhtml:link
                         rel="alternate"
+                        hreflang="es"
+                        href="https://es.vincentlecorre.org/"
+                        /><xhtml:link
+                        rel="alternate"
                         hreflang="pl"
                         href="https://pl.vincentlecorre.org/"
+                        /><xhtml:link
+                        rel="alternate"
+                        hreflang="ru"
+                        href="https://ru.vincentlecorre.org/"
+                        /><xhtml:link
+                        rel="alternate"
+                        hreflang="de"
+                        href="https://de.vincentlecorre.org/"
                         /><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
