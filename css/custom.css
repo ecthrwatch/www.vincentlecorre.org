@@ -9,3 +9,9 @@
   width: 192px !important;
   height: 192px !important;
 }
+
+.footer .author a {
+  color: initial !important;          /* Use browser default */
+  text-decoration: underline !important;  /* Make it visibly clickable */
+  font-weight: normal !important;     /* Optional: match normal weight */
+}
