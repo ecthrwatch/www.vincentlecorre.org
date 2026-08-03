@@ -1,0 +1,90 @@
+<!DOCTYPE html><html lang="pl"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noarchive"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet"><title>Vincent Le Corre</title><link rel="canonical" href="https://www.vincentlecorre.org/"><link rel="alternate" hreflang="en" href="https://www.vincentlecorre.org/"><link rel="alternate" hreflang="fr" href="https://www.vincentlecorre.org/"><link rel="alternate" hreflang="zh-cn" href="https://www.vincentlecorre.org/"><link rel="alternate" hreflang="x-default" href="https://www.vincentlecorre.org/"><meta property="og:site_name" content="Vincent Le Corre"><meta property="og:title" content="Vincent Le Corre"><meta property="og:type" content="website"><meta property="og:url" content="https://www.vincentlecorre.org/"><meta property="og:locale" content="pl"><meta property="og:image" content="https://www.vincentlecorre.org/images/vlc_portrait.jpeg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Vincent Le Corre"><meta name="twitter:image" content="https://www.vincentlecorre.org/images/vlc_portrait.jpeg"><script>
+      (function () {
+        var pref = localStorage.getItem("theme") || "auto";
+        var resolved = pref === "auto"
+          ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+          : pref;
+        document.documentElement.setAttribute("data-theme", resolved);
+      })();
+    </script><link rel="stylesheet" href="/pl/_astro/Base.Cch7lTjp.css"></head> <body> <nav class="nav"> <div class="nav-inner">  <div class="nav-row-1"> <a href="/" class="nav-brand">Vincent Le Corre</a> <button class="nav-hamburger" type="button" aria-expanded="false" aria-label="Menu"> <span class="hamburger-label">Menu &rarr;</span> <span class="hamburger-icon"> <span class="bar"></span> <span class="bar"></span> <span class="bar"></span> </span> </button> <div class="nav-controls"> <div class="theme-toggle" role="group" aria-label="Theme"> <button type="button" data-theme-set="light">Light</button> <button type="button" data-theme-set="dark">Dark</button> <button type="button" data-theme-set="auto">Auto</button> </div> <script>
+(function () {
+  function getSystemTheme() {
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+
+  function applyTheme(pref) {
+    var resolved = pref === "auto" ? getSystemTheme() : pref;
+    document.documentElement.setAttribute("data-theme", resolved);
+
+    document.querySelectorAll("[data-theme-set]").forEach(function (btn) {
+      btn.classList.toggle("active", btn.getAttribute("data-theme-set") === pref);
+    });
+  }
+
+  var stored = localStorage.getItem("theme") || "auto";
+  applyTheme(stored);
+
+  document.querySelectorAll("[data-theme-set]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var pref = btn.getAttribute("data-theme-set");
+      localStorage.setItem("theme", pref);
+      applyTheme(pref);
+    });
+  });
+
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function () {
+    if ((localStorage.getItem("theme") || "auto") === "auto") {
+      applyTheme("auto");
+    }
+  });
+})();
+</script> <div class="lang-switcher"> <button type="button" class="lang-switcher-btn" aria-expanded="false"> Polski </button> <div class="lang-dropdown"> <a href="/"> English </a><a href="/fr/"> Français </a><a href="/zh/"> 简体中文 </a><a href="/zh-hant/"> 繁體中文 </a><a href="/de/"> Deutsch </a><a href="/yi/"> ייִדיש </a><a href="/no/"> Norsk bokmål </a><a href="/ko/"> 한국어 </a><a href="/bzh/"> Brezhoneg </a><a href="/ar/"> العربية </a><a href="/es/"> Español </a><a href="/hi/"> हिन्दी </a><a href="/it/"> Italiano </a><a href="/ja/"> 日本語 </a><a href="/nl/"> Nederlands </a><a href="/pl/" class="current"> Polski </a><a href="/pt-br/"> Português (Brasil) </a><a href="/ro/"> Română </a><a href="/ru/"> Русский </a><a href="/ua/"> Українська </a> </div> </div> </div> </div> <ul class="nav-links">  </ul> </div> </nav> <script>
+(function () {
+  // Hamburger toggle
+  var hamburger = document.querySelector(".nav-hamburger");
+  var navLinks = document.querySelector(".nav-links");
+  if (hamburger && navLinks) {
+    hamburger.addEventListener("click", function () {
+      var expanded = hamburger.getAttribute("aria-expanded") === "true";
+      hamburger.setAttribute("aria-expanded", String(!expanded));
+      navLinks.classList.toggle("open");
+    });
+  }
+
+  // Language switcher dropdown
+  var langBtn = document.querySelector(".lang-switcher-btn");
+  var langDropdown = document.querySelector(".lang-dropdown");
+  if (langBtn && langDropdown) {
+    langBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var expanded = langBtn.getAttribute("aria-expanded") === "true";
+      langBtn.setAttribute("aria-expanded", String(!expanded));
+      langDropdown.classList.toggle("open");
+    });
+
+    document.addEventListener("click", function () {
+      langBtn.setAttribute("aria-expanded", "false");
+      langDropdown.classList.remove("open");
+    });
+  }
+})();
+</script> <main>  <style>
+    .profile-home { text-align: center; padding: 2rem 0 1rem; }
+    .profile-avatar { width: 180px; height: 180px; border-radius: 50%; display: inline-block; object-fit: cover; }
+    .profile-name { font-size: 1.8rem; margin: 1.25rem 0 0.75rem; line-height: 1.3; }
+    .profile-subtitle { font-size: 1.05rem; line-height: 1.8; max-width: 42rem; margin: 0 auto 1.25rem; }
+    .profile-social { display: flex; justify-content: center; gap: 0.9rem; flex-wrap: wrap; }
+    .profile-social-bottom { margin: 2.5rem 0 1rem; }
+    .profile-social .social-icon { display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border: 1px solid var(--color-nav-border, #ccc); border-radius: 50%; font-size: 17px; line-height: 1; font-family: 'Source Sans 3', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; text-decoration: none; opacity: 0.75; transition: opacity 0.2s, border-color 0.2s; }
+    .profile-social .social-icon:hover { opacity: 1; text-decoration: none; }
+    .profile-page { max-width: 56rem; margin: 3rem auto; padding: 2rem 1.5rem; background-color: var(--color-content-bg); border-radius: 0.25rem; }
+    .profile-page .exec-summary { margin-top: 1.5rem; }
+  </style> <div class="profile-page"> <div class="profile-home"> <img src="/pl/images/vlc_portrait.jpeg" alt="Vincent Le Corre" class="profile-avatar"> <h1 class="profile-name">Vincent Le Corre</h1>  </div> <div class="exec-summary prose"><!-- ALMOST-BLANK homepage (decision #116; element list approved by Vincent
+     2026-08-03: name + one epigraph + the language switcher, nothing else.
+     The engine layout renders the photo + name + social icons, so this body
+     carries ONLY the epigraph). P2 port, 2026-08-03: the verse below is
+     VINCENT'S OWN PUBLISHED rendering, copied verbatim from the archived
+     snapshot of this same edition -- nothing here is a new translation. --><div style="text-align: center; font-style: italic;">
+„Niech sprawiedliwość wyleje się jak wody, a prawość jak potok niewysychający.”<br>
+Amos 5:24
+</div></div> <div class="profile-social profile-social-bottom"> <a href="mailto:vincent@ecthrwatch.org" title="Email" class="social-icon"> ✉      </a><a href="https://www.linkedin.com/in/x-v-france/" title="LinkedIn" class="social-icon">  in     </a><a href="https://x.com/ecthrwatch" title="X" class="social-icon">   X    </a><a href="https://github.com/ecthrwatch" title="GitHub" class="social-icon">    GH   </a><a href="https://weibo.com/7055094295" title="Weibo" class="social-icon">     微  </a><a href="https://t.me/vincentlecorre" title="Telegram" class="social-icon">      ✈ </a> </div> </div>  </main> <footer class="footer"> <div class="footer-links">  <a href="/">Home</a> <span class="footer-sep"> | </span> <a href="https://archives.vincentlecorre.org">Archives</a>  </div> <div class="footer-org">Vincent Le Corre</div> <div>&copy; 2021-2026 <a href="https://www.linkedin.com/in/x-v-france/">Vincent Le Corre</a></div> </footer> </body></html>

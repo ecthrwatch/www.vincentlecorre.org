@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The World I Live In</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+/* ── THEME (added 2026-07-31, Vincent's ask: keep dark, add a light mode) ──
+   Every colour below is a variable. The SVG markup still carries its original
+   presentation attributes (fill="…"/stroke="…"); the rules further down
+   override them, because CSS always beats a presentation attribute. So the
+   artwork is untouched structurally — only its palette is now switchable.
+
+   Resolution order: an explicit data-theme on <html> (set by the sync script
+   at the bottom, which mirrors the host page's Mode jour / Mode nuit / Mode
+   automatique toggle) wins; standalone, the OS preference decides; the
+   fallback is the original dark. */
+:root {
+  --bg: #0a0a0f;
+  --ink-rgb: 255,255,255;      /* every white-ish text/line in the piece */
+  --us-rgb: 30,100,200;        /* United States circle */
+  --us-name-rgb: 140,180,240;  /* its solo-phase title */
+  --us-label-rgb: 100,150,220; /* its label in the assembled Venn */
+  --cn-rgb: 200,30,30;
+  --cn-name-rgb: 230,130,130;
+  --cn-label-rgb: 200,100,100;
+  --fr-rgb: 200,180,50;
+  --fr-name-rgb: 230,210,110;
+  --fr-label-rgb: 200,180,80;
+  --pin-rgb: 224,64,64;        /* the "I AM HERE" heartbeat */
+  --hairline-a: 0.09;          /* corner brackets */
+  --footer-a: 0.15;            /* the closing line */
+}
+/* LIGHT: ink flips to near-black; the three national colours are darkened so
+   they keep their identity while staying legible on a pale ground (gold on
+   white is the one that genuinely needs it). */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #fbfbfd;
+    --ink-rgb: 18,18,26;
+    --us-rgb: 30,90,185;
+    --us-name-rgb: 28,78,160;
+    --us-label-rgb: 30,80,168;
+    --cn-rgb: 185,28,28;
+    --cn-name-rgb: 165,26,26;
+    --cn-label-rgb: 172,30,30;
+    --fr-rgb: 150,120,20;
+    --fr-name-rgb: 132,104,12;
+    --fr-label-rgb: 140,112,16;
+    --pin-rgb: 200,40,40;
+    --hairline-a: 0.18;
+    --footer-a: 0.32;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #fbfbfd;
+  --ink-rgb: 18,18,26;
+  --us-rgb: 30,90,185;
+  --us-name-rgb: 28,78,160;
+  --us-label-rgb: 30,80,168;
+  --cn-rgb: 185,28,28;
+  --cn-name-rgb: 165,26,26;
+  --cn-label-rgb: 172,30,30;
+  --fr-rgb: 150,120,20;
+  --fr-name-rgb: 132,104,12;
+  --fr-label-rgb: 140,112,16;
+  --pin-rgb: 200,40,40;
+  --hairline-a: 0.18;
+  --footer-a: 0.32;
+}
+
+/* ── palette applied to the artwork (overrides the inline attributes) ── */
+#cc-us { fill: rgba(var(--us-rgb),0.08); stroke: rgba(var(--us-rgb),0.6); }
+#cc-cn { fill: rgba(var(--cn-rgb),0.08); stroke: rgba(var(--cn-rgb),0.6); }
+#cc-fr { fill: rgba(var(--fr-rgb),0.08); stroke: rgba(var(--fr-rgb),0.6); }
+
+#s-us-name { fill: rgba(var(--us-name-rgb),1); }
+#s-cn-name { fill: rgba(var(--cn-name-rgb),1); }
+#s-fr-name { fill: rgba(var(--fr-name-rgb),1); }
+#s-us-line { stroke: rgba(var(--us-rgb),0.32); }
+#s-cn-line { stroke: rgba(var(--cn-rgb),0.32); }
+#s-fr-line { stroke: rgba(var(--fr-rgb),0.32); }
+#s-us-book, #s-cn-book, #s-fr-book { fill: rgba(var(--ink-rgb),0.85); }
+#s-us-auth, #s-cn-auth, #s-fr-auth { fill: rgba(var(--ink-rgb),0.7); }
+#s-us-k1, #s-us-k2, #s-us-k3,
+#s-cn-k1, #s-cn-k2, #s-cn-k3,
+#s-fr-k1, #s-fr-k2, #s-fr-k3 { fill: rgba(var(--ink-rgb),0.78); }
+
+/* assembled-Venn labels: 1st text = the country, 2-3 = book/author, 4-6 = keywords */
+#v-us text:nth-of-type(1) { fill: rgba(var(--us-label-rgb),1); }
+#v-cn text:nth-of-type(1) { fill: rgba(var(--cn-label-rgb),1); }
+#v-fr text:nth-of-type(1) { fill: rgba(var(--fr-label-rgb),1); }
+#v-us text:nth-of-type(2), #v-us text:nth-of-type(3),
+#v-cn text:nth-of-type(2), #v-cn text:nth-of-type(3),
+#v-fr text:nth-of-type(2), #v-fr text:nth-of-type(3) { fill: rgba(var(--ink-rgb),0.65); }
+#v-us text:nth-of-type(n+4), #v-cn text:nth-of-type(n+4),
+#v-fr text:nth-of-type(n+4) { fill: rgba(var(--ink-rgb),0.60); }
+
+#g-hdr line { stroke: rgba(var(--ink-rgb),var(--hairline-a)); }
+#g-hdr text:nth-of-type(1) { fill: rgba(var(--ink-rgb),0.78); }
+#g-hdr text:nth-of-type(2) { fill: rgba(var(--ink-rgb),1); }
+#g-hdr text:nth-of-type(3) { fill: rgba(var(--ink-rgb),var(--footer-a)); }
+
+#i-us-cn text, #i-us-fr text, #i-cn-fr text { fill: rgba(var(--ink-rgb),0.55); }
+#i-us-cn text:nth-of-type(2), #i-us-cn text:nth-of-type(3),
+#i-cn-fr text:nth-of-type(2), #i-cn-fr text:nth-of-type(3) { fill: rgba(var(--ink-rgb),0.62); }
+#i-us-fr text:nth-of-type(2), #i-us-fr text:nth-of-type(3) { fill: rgba(var(--ink-rgb),0.72); }
+
+#g-pin text:nth-of-type(1) { fill: rgba(var(--ink-rgb),0.88); }
+#g-pin text:nth-of-type(2) { fill: rgba(var(--ink-rgb),0.92); }
+#g-pin .hb circle { fill: rgb(var(--pin-rgb)); }
+#g-pin > circle:nth-of-type(1) { stroke: rgba(var(--pin-rgb),0.72); }
+#g-pin > circle:nth-of-type(2) { stroke: rgba(var(--pin-rgb),0.48); }
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: 'Source Sans 3', 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { width: min(760px, 100vw); }
+svg { width: 100%; height: auto; display: block; }
+
+.fade { transition: opacity .75s ease; }
+
+/* Kinetic word reveal — used for solo-phase keywords.
+   Element starts invisible, slightly scaled down, and slides up into place.
+   Toggling .in triggers the entrance. */
+.kw {
+  opacity: 0;
+  transform: translateY(6px) scale(0.92);
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: opacity .28s ease-out, transform .35s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.kw.in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+/* The "current" word gets a brief emphasis pulse on entry. */
+@keyframes kwPulse {
+  0%   { filter: brightness(1.6); letter-spacing: 3.5px; }
+  100% { filter: brightness(1.0); letter-spacing: 2.5px; }
+}
+.kw.now {
+  animation: kwPulse .55s ease-out forwards;
+}
+/* Past words dim down once the next has landed. */
+.kw.past {
+  opacity: 0.42;
+}
+
+@keyframes pL { 0%,100%{stroke-opacity:.55} 50%{stroke-opacity:1} }
+@keyframes pR { 0%,100%{stroke-opacity:.55} 50%{stroke-opacity:1} }
+@keyframes pF { 0%,100%{stroke-opacity:.55} 50%{stroke-opacity:1} }
+.pulse-l { animation: pL 6s ease-in-out infinite; }
+.pulse-r { animation: pR 6s ease-in-out infinite 2s; }
+.pulse-f { animation: pF 6s ease-in-out infinite 4s; }
+
+@keyframes hb {
+  0%,100% { transform: scale(1); }
+  7%  { transform: scale(1.85); }
+  17% { transform: scale(1.1); }
+  26% { transform: scale(1.6); }
+  36% { transform: scale(1); }
+}
+.hb {
+  animation: hb 1.5s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.ctrl {
+  text-align: center;
+  padding: 14px 0 10px;
+  font-family: 'Source Sans 3', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 11px;
+  color: rgba(var(--ink-rgb),0.2);
+  cursor: pointer;
+  user-select: none;
+  letter-spacing: 3px;
+}
+.ctrl:hover { color: rgba(var(--ink-rgb),0.45); }
+</style>
+</head>
+<body>
+<div class="wrap">
+<svg id="venn" viewBox="0 0 760 820" xmlns="http://www.w3.org/2000/svg">
+<title>The World I Live In</title>
+
+<!--
+  LEFT   = United States  cx=280 cy=350 r=220  blue
+  RIGHT  = China          cx=480 cy=350 r=220  red
+  BOTTOM = France         cx=380 cy=585 r=220  gold
+
+  Solo offsets — all circles resolve to visual centre (380, 330):
+    United States  translate(100,−20)    280+100=380  350−20=330
+    China          translate(−100,−20)   480−100=380  350−20=330
+    France         translate(0,−255)     380+0=380    585−255=330
+-->
+
+<!-- ── CIRCLES ─────────────────────────────────────── -->
+<g id="gus" class="fade" opacity="0" style="transform:translate(100px,-20px)">
+  <circle cx="280" cy="350" r="220" id="cc-us"
+    fill="rgba(30,100,200,0.08)" stroke="rgba(30,100,200,0.6)" stroke-width="2"/>
+</g>
+<g id="gcn" class="fade" opacity="0" style="transform:translate(-100px,-20px)">
+  <circle cx="480" cy="350" r="220" id="cc-cn"
+    fill="rgba(200,30,30,0.08)" stroke="rgba(200,30,30,0.6)" stroke-width="2"/>
+</g>
+<g id="gfr" class="fade" opacity="0" style="transform:translate(0px,-225px)">
+  <circle cx="380" cy="555" r="220" id="cc-fr"
+    fill="rgba(200,180,50,0.08)" stroke="rgba(200,180,50,0.6)" stroke-width="2"/>
+</g>
+
+<!-- ── SOLO: United States ───────────────────────────── -->
+<g id="s-us" class="fade" opacity="0">
+  <text id="s-us-name" class="kw" x="380" y="245"
+    font-family="'Lora', Georgia, serif"
+    font-weight="900" font-size="40" fill="rgba(140,180,240,1)"
+    text-anchor="middle" letter-spacing="2">UNITED STATES</text>
+  <text id="s-us-book" class="kw" x="380" y="295"
+    font-family="'Lora', Georgia, serif"
+    font-weight="400" font-style="italic" font-size="34"
+    fill="rgba(255,255,255,0.85)" text-anchor="middle">Brave New World</text>
+  <text id="s-us-auth" class="kw" x="380" y="328"
+    font-family="'Source Sans 3', 'Helvetica Neue', sans-serif"
+    font-weight="300" font-size="18"
+    fill="rgba(255,255,255,0.7)" text-anchor="middle">Aldous Huxley, 1932</text>
+  <line id="s-us-line" class="kw" x1="270" y1="350" x2="490" y2="350" stroke="rgba(30,100,200,0.32)" stroke-width="0.7"/>
+  <text id="s-us-k1" class="kw" x="380" y="385"
+    font-family="'Source Sans 3', 'Helvetica Neue', sans-serif"
+    font-weight="400" font-size="22"
+    fill="rgba(255,255,255,0.78)" text-anchor="middle" letter-spacing="3">DISTRACTION</text>
+  <text id="s-us-k2" class="kw" x="380" y="418"
+    font-family="'Source Sans 3', 'Helvetica Neue', sans-serif"
+    font-weight="400" font-size="22"
+    fill="rgba(255,255,255,0.78)" text-anchor="middle" letter-spacing="3">CONSUMERISM</text>
+  <text id="s-us-k3" class="kw" x="380" y="451"
+    font-family="'Source Sans 3', 'Helvetica Neue', sans-serif"
+    font-weight="400" font-size="22"
+    fill="rgba(255,255,255,0.78)" text-anchor="middle" letter-spacing="3">VOLUNTARY SUBMISSION</text>
+</g>
+
+<!-- ── SOLO: China ───────────────────────────────────── -->
+<g id="s-cn" class="fade" opacity="0">
+  <text id="s-cn-name" class="kw" x="380" y="245"
+    font-family="'Lora', Georgia, serif"
+    font-weight="900" font-size="56" fill="rgba(230,130,130,1)"
+    text-anchor="middle" letter-spacing="5">CHINA</text>
+  <text id="s-cn-book" class="kw" x="380" y="295"
+    font-family="'Lora', Georgia, serif"
+    font-weight="400" font-style="italic" font-size="34"
+    fill="rgba(255,255,255,0.85)" text-anchor="middle">1984</text>
+  <text id="s-cn-auth" class="kw" x="380" y="328"
+    font-family="'Source Sans 3', 'Helvetica Neue', sans-serif"
+    font-weight="300" font-size="18"
+    fill="rgba(255,255,255,0.7)" text-anchor="middle">George Orwell, 1949</text>
+  <line id="s-cn-line" class="kw" x1="270" y1="350" x2="490" y2="350" stroke="rgba(200,30,30,0.32)" stroke-width="0.7"/>
+  <text id="s-cn-k1" class="kw" x="380" y="385"
+    font-family="'Source Sans 3', 'Helvetica Neue', sans-serif"
+    font-weight="400" font-size="22"
+    fill="rgba(255,255,255,0.78)" text-anchor="middle" letter-spacing="3">SURVEILLANCE</text>
+  <text id="s-cn-k2" class="kw" x="380" y="418"
+    font-family="'Source Sans 3', 'Helvetica Neue', sans-serif"
+    font-weight="400" font-size="22"
+    fill="rgba(255,255,255,0.78)" text-anchor="middle" letter-spacing="3">CENSORSHIP</text>
+  <text id="s-cn-k3" class="kw" x="380" y="451"
+    font-family="'Source Sans 3', 'Helvetica Neue', sans-serif"
+    font-weight="400" font-size="22"
+    fill="rgba(255,255,255,0.78)" text-anchor="middle" letter-spacing="3">THOUGHT CONTROL</text>
+</g>
+
+<!-- ── SOLO: France ──────────────────────────────────── -->
+<g id="s-fr" class="fade" opacity="0">
+  <text id="s-fr-name" class="kw" x="380" y="245"
+    font-family="'Lora', Georgia, serif"
+    font-weight="900" font-size="56" fill="rgba(230,210,110,1)"
+    text-anchor="middle" letter-spacing="5">FRANCE</text>
+  <text id="s-fr-book" class="kw" x="380" y="295"
+    font-family="'Lora', Georgia, serif"
+    font-weight="400" font-style="italic" font-size="34"
+    fill="rgba(255,255,255,0.85)" text-anchor="middle">Fahrenheit 451</text>
+  <text id="s-fr-auth" class="kw" x="380" y="328"
+    font-family="'Source Sans 3', 'Helvetica Neue', sans-serif"
+    font-weight="300" font-size="18"
+    fill="rgba(255,255,255,0.7)" text-anchor="middle">Ray Bradbury, 1953</text>
+  <line id="s-fr-line" class="kw" x1="270" y1="350" x2="490" y2="350" stroke="rgba(200,180,50,0.32)" stroke-width="0.7"/>
+  <text id="s-fr-k1" class="kw" x="380" y="385"
+    font-family="'Source Sans 3', 'Helvetica Neue', sans-serif"
+    font-weight="400" font-size="22"
+    fill="rgba(255,255,255,0.78)" text-anchor="middle" letter-spacing="3">INTELLECTUAL EROSION</text>
+  <text id="s-fr-k2" class="kw" x="380" y="418"
+    font-family="'Source Sans 3', 'Helvetica Neue', sans-serif"
+    font-weight="400" font-size="22"
+    fill="rgba(255,255,255,0.78)" text-anchor="middle" letter-spacing="3">SPEECH CONTROL</text>
+  <text id="s-fr-k3" class="kw" x="380" y="451"
+    font-family="'Source Sans 3', 'Helvetica Neue', sans-serif"
+    font-weight="400" font-size="22"
+    fill="rgba(255,255,255,0.78)" text-anchor="middle" letter-spacing="3">PROTECTING YOU FROM IDEAS</text>
+</g>
+
+<!-- ── VENN: United States — upper LEFT, shifted to x=175 ──
+  "UNITED STATES" at 21px letter-spacing 1 ≈ 176px wide → spans [87,263].
+  Left circle at y=260: x-range [79,481]. Safely inside. ✓
+  Right edge at 263 vs China text left edge at ~476 → 213px gap. No overlap. ✓
+-->
+<g id="v-us" class="fade" opacity="0">
+  <text x="182" y="260"
+    font-family="'Lora', Georgia, serif"
+    font-weight="900" font-size="21" fill="rgba(100,150,220,1)"
+    text-anchor="middle" letter-spacing="1">UNITED STATES</text>
+  <text x="182" y="284"
+    font-family="'Lora', Georgia, serif"
+    font-weight="400" font-style="italic" font-size="15"
+    fill="rgba(255,255,255,0.65)" text-anchor="middle">Brave New World</text>
+  <text x="182" y="301"
+    font-family="'Source Sans 3', 'Helvetica Neue', sans-serif"
+    font-weight="300" font-size="11"
+    fill="rgba(255,255,255,0.65)" text-anchor="middle">Aldous Huxley, 1932</text>
+  <text x="178" y="328"
+    font-family="'Source Sans 3', 'Helvetica Neue', sans-serif"
+    font-weight="300" font-size="11"
+    fill="rgba(255,255,255,0.60)" text-anchor="middle" letter-spacing="2">DISTRACTION</text>
+  <text x="178" y="346"
+    font-family="'Source Sans 3', 'Helvetica Neue', sans-serif"
+    font-weight="300" font-size="11"
+    fill="rgba(255,255,255,0.60)" text-anchor="middle" letter-spacing="2">CONSUMERISM</text>
+  <text x="178" y="364"
+    font-family="'Source Sans 3', 'Helvetica Neue', sans-serif"
+    font-weight="300" font-size="11"
+    fill="rgba(255,255,255,0.60)" text-anchor="middle" letter-spacing="2">VOLUNTARY SUBMISSION</text>
+</g>
+
+<!-- ── VENN: China — upper RIGHT x=572 ──────────────── -->
+<g id="v-cn" class="fade" opacity="0">
+  <text x="572" y="260"
+    font-family="'Lora', Georgia, serif"
+    font-weight="900" font-size="26" fill="rgba(200,100,100,1)"
+    text-anchor="middle" letter-spacing="2">CHINA</text>
+  <text x="572" y="288"
+    font-family="'Lora', Georgia, serif"
+    font-weight="400" font-style="italic" font-size="17"
+    fill="rgba(255,255,255,0.65)" text-anchor="middle">1984</text>
+  <text x="572" y="307"
+    font-family="'Source Sans 3', 'Helvetica Neue', sans-serif"
+    font-weight="300" font-size="12"
+    fill="rgba(255,255,255,0.65)" text-anchor="middle">George Orwell, 1949</text>
+  <text x="576" y="337"
+    font-family="'Source Sans 3', 'Helvetica Neue', sans-serif"
+    font-weight="300" font-size="11"
+    fill="rgba(255,255,255,0.60)" text-anchor="middle" letter-spacing="2">SURVEILLANCE</text>
+  <text x="576" y="355"
+    font-family="'Source Sans 3', 'Helvetica Neue', sans-serif"
+    font-weight="300" font-size="11"
+    fill="rgba(255,255,255,0.60)" text-anchor="middle" letter-spacing="2">CENSORSHIP</text>
+  <text x="576" y="373"
+    font-family="'Source Sans 3', 'Helvetica Neue', sans-serif"
+    font-weight="300" font-size="11"
+    fill="rgba(255,255,255,0.60)" text-anchor="middle" letter-spacing="2">THOUGHT CONTROL</text>
+</g>
+
+<!-- ── VENN: France — bottom ─────────────────────────── -->
+<g id="v-fr" class="fade" opacity="0">
+  <text x="380" y="618"
+    font-family="'Lora', Georgia, serif"
+    font-weight="900" font-size="26" fill="rgba(200,180,80,1)"
+    text-anchor="middle" letter-spacing="2">FRANCE</text>
+  <text x="380" y="644"
+    font-family="'Lora', Georgia, serif"
+    font-weight="400" font-style="italic" font-size="17"
+    fill="rgba(255,255,255,0.65)" text-anchor="middle">Fahrenheit 451</text>
+  <text x="380" y="662"
+    font-family="'Source Sans 3', 'Helvetica Neue', sans-serif"
+    font-weight="300" font-size="12"
+    fill="rgba(255,255,255,0.65)" text-anchor="middle">Ray Bradbury, 1953</text>
+  <text x="380" y="690"
+    font-family="'Source Sans 3', 'Helvetica Neue', sans-serif"
+    font-weight="300" font-size="11"
+    fill="rgba(255,255,255,0.60)" text-anchor="middle" letter-spacing="2">INTELLECTUAL EROSION</text>
+  <text x="380" y="708"
+    font-family="'Source Sans 3', 'Helvetica Neue', sans-serif"
+    font-weight="300" font-size="11"
+    fill="rgba(255,255,255,0.60)" text-anchor="middle" letter-spacing="2">SPEECH CONTROL</text>
+  <text x="380" y="726"
+    font-family="'Source Sans 3', 'Helvetica Neue', sans-serif"
+    font-weight="300" font-size="11"
+    fill="rgba(255,255,255,0.60)" text-anchor="middle" letter-spacing="2">PROTECTING YOU FROM IDEAS</text>
+</g>
+
+<!-- ── HEADER + FOOTER + CORNERS ─────────────────────── -->
+<g id="g-hdr" class="fade" opacity="0">
+  <line x1="28" y1="28" x2="68" y2="28" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
+  <line x1="28" y1="28" x2="28" y2="68" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
+  <line x1="732" y1="28" x2="692" y2="28" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
+  <line x1="732" y1="28" x2="732" y2="68" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
+  <line x1="28" y1="792" x2="68" y2="792" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
+  <line x1="28" y1="792" x2="28" y2="752" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
+  <line x1="732" y1="792" x2="692" y2="792" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
+  <line x1="732" y1="792" x2="732" y2="752" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
+  <text x="380" y="60"
+    font-family="'Lora', Georgia, serif"
+    font-weight="900" font-size="19" fill="rgba(255,255,255,0.78)"
+    text-anchor="middle" letter-spacing="7">THE WORLD I LIVE IN</text>
+  <text x="380" y="84"
+    font-family="'Source Sans 3', 'Helvetica Neue', sans-serif"
+    font-weight="600" font-size="15" fill="rgba(255,255,255,1)"
+    text-anchor="middle" letter-spacing="6">2026</text>
+  <text x="380" y="810"
+    font-family="'Source Sans 3', 'Helvetica Neue', sans-serif"
+    font-weight="300" font-size="12" fill="rgba(255,255,255,0.15)"
+    text-anchor="middle" letter-spacing="1">Where dystopia becomes reality, resistance becomes duty.</text>
+</g>
+
+<!-- ── INTERSECTION: United States ∩ China ────────────
+  Centred at (380,310) — above France circle (top=365), inside both US and China.
+  (The NSA) left-anchored toward US; (The Great Firewall) right-anchored toward China.
+-->
+<g id="i-us-cn" class="fade" opacity="0">
+  <text x="332" y="270"
+    font-family="'Lora', Georgia, serif"
+    font-weight="400" font-style="italic" font-size="8"
+    fill="rgba(255,255,255,0.55)" text-anchor="start" letter-spacing="0.3">(The NSA)</text>
+  <text x="380" y="289"
+    font-family="'Source Sans 3', 'Helvetica Neue', sans-serif"
+    font-weight="300" font-size="9" fill="rgba(255,255,255,0.62)"
+    text-anchor="middle" letter-spacing="2">SURVEILLANCE AS</text>
+  <text x="380" y="304"
+    font-family="'Source Sans 3', 'Helvetica Neue', sans-serif"
+    font-weight="300" font-size="9" fill="rgba(255,255,255,0.62)"
+    text-anchor="middle" letter-spacing="2">INFRASTRUCTURE</text>
+  <text x="428" y="319"
+    font-family="'Lora', Georgia, serif"
+    font-weight="400" font-style="italic" font-size="8"
+    fill="rgba(255,255,255,0.55)" text-anchor="end" letter-spacing="0.3">(The Great Firewall)</text>
+</g>
+
+<!-- ── INTERSECTION: United States ∩ France ───────────
+  Centred at (290,500) — in exclusive US-France zone (left of x=380, outside China).
+  (1776) left-anchored toward US; (1789) right-anchored toward France.
+-->
+<g id="i-us-fr" class="fade" opacity="0">
+  <text x="201" y="470"
+    font-family="'Lora', Georgia, serif"
+    font-weight="400" font-style="italic" font-size="12"
+    fill="rgba(255,255,255,0.55)" text-anchor="start" letter-spacing="0.3">(1776)</text>
+  <text x="257" y="492"
+    font-family="'Lora', Georgia, serif"
+    font-weight="400" font-style="italic" font-size="14"
+    fill="rgba(255,255,255,0.72)" text-anchor="middle">the illusion</text>
+  <text x="257" y="516"
+    font-family="'Lora', Georgia, serif"
+    font-weight="400" font-style="italic" font-size="14"
+    fill="rgba(255,255,255,0.72)" text-anchor="middle">of freedom</text>
+  <text x="319" y="538"
+    font-family="'Lora', Georgia, serif"
+    font-weight="400" font-style="italic" font-size="12"
+    fill="rgba(255,255,255,0.55)" text-anchor="end" letter-spacing="0.3">(1789)</text>
+</g>
+
+<!-- ── INTERSECTION: China ∩ France ──────────────────
+  Centred at (465,500) — in exclusive China-France zone (right of x=380, outside US).
+  (The Central Propaganda Department) right-anchored toward China;
+  (the Digital Services Act) left-anchored toward France.
+-->
+<g id="i-cn-fr" class="fade" opacity="0">
+  <text x="580" y="480"
+    font-family="'Lora', Georgia, serif"
+    font-weight="400" font-style="italic" font-size="7.5"
+    fill="rgba(255,255,255,0.55)" text-anchor="end" letter-spacing="0.3">(CPC Propaganda Department)</text>
+  <text x="505" y="495"
+    font-family="'Source Sans 3', 'Helvetica Neue', sans-serif"
+    font-weight="300" font-size="9" fill="rgba(255,255,255,0.62)"
+    text-anchor="middle" letter-spacing="2">AUTHORISED</text>
+  <text x="505" y="510"
+    font-family="'Source Sans 3', 'Helvetica Neue', sans-serif"
+    font-weight="300" font-size="9" fill="rgba(255,255,255,0.62)"
+    text-anchor="middle" letter-spacing="2">NARRATIVE</text>
+  <text x="456" y="525"
+    font-family="'Lora', Georgia, serif"
+    font-weight="400" font-style="italic" font-size="7.5"
+    fill="rgba(255,255,255,0.55)" text-anchor="start" letter-spacing="0.3">(E.U. Digital Services Act)</text>
+</g>
+
+<!-- ── CENTER PIN — 1.5s heartbeat, strong ripple ────── -->
+<g id="g-pin" class="fade" opacity="0">
+  <text x="380" y="414"
+    font-family="'Source Sans 3', 'Helvetica Neue', sans-serif"
+    font-weight="600" font-size="13" fill="rgba(255,255,255,0.88)"
+    text-anchor="middle" letter-spacing="4">I AM HERE</text>
+  <g class="hb">
+    <circle cx="380" cy="432" r="7" fill="#e04040"/>
+  </g>
+  <circle cx="380" cy="432" fill="none" stroke="rgba(224,64,64,0.72)" stroke-width="2">
+    <animate attributeName="r" values="7;50" dur="1.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.72;0" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="380" cy="432" fill="none" stroke="rgba(224,64,64,0.48)" stroke-width="1.5">
+    <animate attributeName="r" values="7;62" dur="1.5s" begin="0.32s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0.48;0" keyTimes="0;0.12;1" dur="1.5s" begin="0.32s" repeatCount="indefinite"/>
+  </circle>
+  <text x="380" y="458"
+    font-family="'Lora', Georgia, serif"
+    font-weight="700" font-size="15" fill="rgba(255,255,255,0.92)"
+    text-anchor="middle">Vincent B. LE CORRE</text>
+</g>
+
+</svg>
+<div class="ctrl" id="rp">↺&nbsp;&nbsp;REPLAY</div>
+</div>
+
+<script>
+// ── THEME SYNC (2026-07-31) ──────────────────────────────────────────────
+// Embedded in a page, this piece should wear the SAME theme the reader chose
+// with the site's Mode jour / Mode nuit / Mode automatique buttons. Those set
+// data-theme="light|dark" on the host page's <html>. The frame is same-origin,
+// so it can read that attribute directly and watch it for changes — no change
+// to the host page, and no extra JavaScript added to it.
+// Opened on its own (no parent), it silently falls back to the OS preference,
+// which the CSS above already handles. A ?theme=light|dark URL parameter
+// overrides everything, for previews.
+(function(){
+  var root = document.documentElement;
+  function apply(v){
+    if (v === "light" || v === "dark") root.setAttribute("data-theme", v);
+    else root.removeAttribute("data-theme");
+  }
+  var forced = new URLSearchParams(location.search).get("theme");
+  if (forced) { apply(forced); return; }
+  try {
+    var hostRoot = window.parent && window.parent !== window
+      ? window.parent.document.documentElement : null;
+    if (!hostRoot) return;                       // standalone: OS preference
+    apply(hostRoot.getAttribute("data-theme"));
+    new MutationObserver(function(){
+      apply(hostRoot.getAttribute("data-theme"));
+    }).observe(hostRoot, { attributes: true, attributeFilter: ["data-theme"] });
+  } catch (e) {
+    // Cross-origin parent (never our case) — keep the OS preference.
+  }
+})();
+
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  var T = [];
+  function show(id, d){ T.push(setTimeout(function(){ $(id).style.opacity = '1'; }, d)); }
+  function hide(id, d){ T.push(setTimeout(function(){ $(id).style.opacity = '0'; }, d)); }
+
+  // Reveal one keyword: add .in (slide+fade), briefly add .now (pulse), demote
+  // the previously-current keyword to .past (dim).
+  function kin(id, d, opts){
+    opts = opts || {};
+    T.push(setTimeout(function(){
+      var el = $(id);
+      if (!el) return;
+      // demote prior
+      if (opts.prev) {
+        var p = $(opts.prev);
+        if (p) { p.classList.remove('now'); if (opts.dim !== false) p.classList.add('past'); }
+      }
+      el.classList.add('in');
+      if (opts.emphasize) el.classList.add('now');
+    }, d));
+  }
+
+  // Solo sequence per country. Slow, deliberate pacing — identity cascade
+  // unfolds over ~3s, then each keyword owns the screen for ~2s.
+  function soloIn(prefix, t0){
+    kin(prefix+'-name', t0 +    0);
+    kin(prefix+'-book', t0 + 1100);
+    kin(prefix+'-auth', t0 + 2100);
+    kin(prefix+'-line', t0 + 2700);
+    kin(prefix+'-k1',   t0 + 3400, { emphasize: true });
+    kin(prefix+'-k2',   t0 + 5400, { emphasize: true, prev: prefix+'-k1' });
+    kin(prefix+'-k3',   t0 + 7400, { emphasize: true, prev: prefix+'-k2' });
+    return t0 + 9600;
+  }
+
+  function run(){
+    // Each solo phase: ~1s circle entry → ~9.6s kinetic reveal → ~0.6s exit.
+    // Total per country ≈ 11.2s.
+
+    // ── Phase 1 — UNITED STATES ─────────────────────────────
+    show('gus', 100);
+    show('s-us', 1000);
+    soloIn('s-us', 1000);
+    hide('s-us', 10600); hide('gus', 10900);
+
+    // ── Phase 2 — CHINA ─────────────────────────────────────
+    show('gcn', 11200);
+    show('s-cn', 12100);
+    soloIn('s-cn', 12100);
+    hide('s-cn', 21700); hide('gcn', 22000);
+
+    // ── Phase 3 — FRANCE ────────────────────────────────────
+    show('gfr', 22300);
+    show('s-fr', 23200);
+    soloIn('s-fr', 23200);
+    hide('s-fr', 32800);
+
+    // ── Phase 4a — All three superposed at centre ──────────
+    show('gus', 33100); show('gcn', 33100);
+    // ── Phase 4b — Venn assembly ───────────────────────────
+    T.push(setTimeout(function(){
+      ['gus','gcn','gfr'].forEach(function(id){
+        var el = $(id);
+        el.style.transition = 'opacity .75s ease, transform 1.6s cubic-bezier(0.4,0,0.2,1)';
+        el.style.transform  = 'translate(0px,0px)';
+      });
+    }, 33800));
+    show('v-us', 34900); show('v-cn', 34900);
+    show('v-fr', 35150); show('g-hdr', 35400);
+    show('i-us-cn', 35400); show('i-us-fr', 35600); show('i-cn-fr', 35600);
+    T.push(setTimeout(function(){
+      $('cc-us').classList.add('pulse-l');
+      $('cc-cn').classList.add('pulse-r');
+      $('cc-fr').classList.add('pulse-f');
+    }, 35800));
+    show('g-pin', 36600);
+  }
+
+  function reset(){
+    T.forEach(clearTimeout); T = [];
+    var ids = ['gus','gcn','gfr','s-us','s-cn','s-fr','v-us','v-cn','v-fr','g-hdr','g-pin','i-us-cn','i-us-fr','i-cn-fr'];
+    ids.forEach(function(id){
+      var el = $(id);
+      el.style.transition = 'none';
+      el.style.opacity    = '0';
+    });
+    // Strip kinetic state from every .kw element.
+    var kws = document.querySelectorAll('.kw');
+    for (var i = 0; i < kws.length; i++) {
+      kws[i].classList.remove('in', 'now', 'past');
+    }
+    $('gus').style.transform = 'translate(100px,-20px)';
+    $('gcn').style.transform = 'translate(-100px,-20px)';
+    $('gfr').style.transform = 'translate(0px,-225px)';
+    $('cc-us').classList.remove('pulse-l');
+    $('cc-cn').classList.remove('pulse-r');
+    $('cc-fr').classList.remove('pulse-f');
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){
+      ids.forEach(function(id){ $(id).style.transition = 'opacity .75s ease'; });
+    }); });
+  }
+
+  $('rp').addEventListener('click', function(){ reset(); setTimeout(run, 180); });
+  run();
+})();
+</script>
+</body>
+</html>

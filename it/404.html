@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang="it"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noarchive"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet"><title>404 — Pagina non trovata | Vincent Le Corre</title><link rel="canonical" href="https://www.vincentlecorre.org/404/"><meta property="og:site_name" content="Vincent Le Corre"><meta property="og:title" content="404 — Pagina non trovata | Vincent Le Corre"><meta property="og:type" content="website"><meta property="og:url" content="https://www.vincentlecorre.org/404/"><meta property="og:locale" content="it"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="404 — Pagina non trovata | Vincent Le Corre"><script>
+      (function () {
+        var pref = localStorage.getItem("theme") || "auto";
+        var resolved = pref === "auto"
+          ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+          : pref;
+        document.documentElement.setAttribute("data-theme", resolved);
+      })();
+    </script><style>.page-container[data-astro-cid-zetdm5md]{max-width:56rem;margin:3rem auto;padding:4rem 1.5rem;background-color:var(--color-content-bg);border-radius:.25rem}.page-container[data-astro-cid-zetdm5md] h1[data-astro-cid-zetdm5md]{font-size:2.25rem;font-weight:800;margin-bottom:1rem}.page-container[data-astro-cid-zetdm5md] p[data-astro-cid-zetdm5md]{margin-bottom:1rem;line-height:1.7}
+</style>
+<link rel="stylesheet" href="/it/_astro/Base.Cch7lTjp.css"></head> <body> <nav class="nav"> <div class="nav-inner">  <div class="nav-row-1"> <a href="/" class="nav-brand">Vincent Le Corre</a> <button class="nav-hamburger" type="button" aria-expanded="false" aria-label="Menu"> <span class="hamburger-label">Menu &rarr;</span> <span class="hamburger-icon"> <span class="bar"></span> <span class="bar"></span> <span class="bar"></span> </span> </button> <div class="nav-controls"> <div class="theme-toggle" role="group" aria-label="Theme"> <button type="button" data-theme-set="light">Chiaro</button> <button type="button" data-theme-set="dark">Scuro</button> <button type="button" data-theme-set="auto">Automatico</button> </div> <script>
+(function () {
+  function getSystemTheme() {
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+
+  function applyTheme(pref) {
+    var resolved = pref === "auto" ? getSystemTheme() : pref;
+    document.documentElement.setAttribute("data-theme", resolved);
+
+    document.querySelectorAll("[data-theme-set]").forEach(function (btn) {
+      btn.classList.toggle("active", btn.getAttribute("data-theme-set") === pref);
+    });
+  }
+
+  var stored = localStorage.getItem("theme") || "auto";
+  applyTheme(stored);
+
+  document.querySelectorAll("[data-theme-set]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var pref = btn.getAttribute("data-theme-set");
+      localStorage.setItem("theme", pref);
+      applyTheme(pref);
+    });
+  });
+
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function () {
+    if ((localStorage.getItem("theme") || "auto") === "auto") {
+      applyTheme("auto");
+    }
+  });
+})();
+</script> <div class="lang-switcher"> <button type="button" class="lang-switcher-btn" aria-expanded="false"> Italiano </button> <div class="lang-dropdown"> <a href="/"> English </a><a href="/fr/"> Français </a><a href="/zh/"> 简体中文 </a><a href="/zh-hant/"> 繁體中文 </a><a href="/de/"> Deutsch </a><a href="/yi/"> ייִדיש </a><a href="/no/"> Norsk bokmål </a><a href="/ko/"> 한국어 </a><a href="/bzh/"> Brezhoneg </a><a href="/ar/"> العربية </a><a href="/es/"> Español </a><a href="/hi/"> हिन्दी </a><a href="/it/" class="current"> Italiano </a><a href="/ja/"> 日本語 </a><a href="/nl/"> Nederlands </a><a href="/pl/"> Polski </a><a href="/pt-br/"> Português (Brasil) </a><a href="/ro/"> Română </a><a href="/ru/"> Русский </a><a href="/ua/"> Українська </a> </div> </div> </div> </div> <ul class="nav-links">  </ul> </div> </nav> <script>
+(function () {
+  // Hamburger toggle
+  var hamburger = document.querySelector(".nav-hamburger");
+  var navLinks = document.querySelector(".nav-links");
+  if (hamburger && navLinks) {
+    hamburger.addEventListener("click", function () {
+      var expanded = hamburger.getAttribute("aria-expanded") === "true";
+      hamburger.setAttribute("aria-expanded", String(!expanded));
+      navLinks.classList.toggle("open");
+    });
+  }
+
+  // Language switcher dropdown
+  var langBtn = document.querySelector(".lang-switcher-btn");
+  var langDropdown = document.querySelector(".lang-dropdown");
+  if (langBtn && langDropdown) {
+    langBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var expanded = langBtn.getAttribute("aria-expanded") === "true";
+      langBtn.setAttribute("aria-expanded", String(!expanded));
+      langDropdown.classList.toggle("open");
+    });
+
+    document.addEventListener("click", function () {
+      langBtn.setAttribute("aria-expanded", "false");
+      langDropdown.classList.remove("open");
+    });
+  }
+})();
+</script> <main>  <div class="page-container" data-astro-cid-zetdm5md> <h1 data-astro-cid-zetdm5md>404 — Pagina non trovata</h1> <p data-astro-cid-zetdm5md>La pagina richiesta non esiste su questo sito. Potrebbe essere stata spostata o rimossa.</p> <p data-astro-cid-zetdm5md><a href="/" data-astro-cid-zetdm5md>Torna alla home</a></p> </div>  </main> <footer class="footer"> <div class="footer-links">  <a href="/">Home</a> <span class="footer-sep"> | </span> <a href="https://archives.vincentlecorre.org">Archivio</a>  </div> <div class="footer-org">Vincent Le Corre</div> <div>&copy; 2021-2026 <a href="https://www.linkedin.com/in/x-v-france/">Vincent Le Corre</a></div> </footer> </body></html>

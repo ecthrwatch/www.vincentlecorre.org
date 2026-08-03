@@ -1,341 +1,90 @@
-<!DOCTYPE html>
-<html lang="en" >
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noarchive"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet"><title>Vincent Le Corre</title><link rel="canonical" href="https://www.vincentlecorre.org/"><link rel="alternate" hreflang="en" href="https://www.vincentlecorre.org/"><link rel="alternate" hreflang="fr" href="https://www.vincentlecorre.org/"><link rel="alternate" hreflang="zh-cn" href="https://www.vincentlecorre.org/"><link rel="alternate" hreflang="x-default" href="https://www.vincentlecorre.org/"><meta property="og:site_name" content="Vincent Le Corre"><meta property="og:title" content="Vincent Le Corre"><meta property="og:type" content="website"><meta property="og:url" content="https://www.vincentlecorre.org/"><meta property="og:locale" content="en"><meta property="og:image" content="https://www.vincentlecorre.org/images/vlc_portrait.jpeg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Vincent Le Corre"><meta name="twitter:image" content="https://www.vincentlecorre.org/images/vlc_portrait.jpeg"><script>
+      (function () {
+        var pref = localStorage.getItem("theme") || "auto";
+        var resolved = pref === "auto"
+          ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+          : pref;
+        document.documentElement.setAttribute("data-theme", resolved);
+      })();
+    </script><link rel="stylesheet" href="/_astro/Base.Cch7lTjp.css"></head> <body> <nav class="nav"> <div class="nav-inner">  <div class="nav-row-1"> <a href="/" class="nav-brand">Vincent Le Corre</a> <button class="nav-hamburger" type="button" aria-expanded="false" aria-label="Menu"> <span class="hamburger-label">Menu &rarr;</span> <span class="hamburger-icon"> <span class="bar"></span> <span class="bar"></span> <span class="bar"></span> </span> </button> <div class="nav-controls"> <div class="theme-toggle" role="group" aria-label="Theme"> <button type="button" data-theme-set="light">Light</button> <button type="button" data-theme-set="dark">Dark</button> <button type="button" data-theme-set="auto">Auto</button> </div> <script>
+(function () {
+  function getSystemTheme() {
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
 
-    <head>
-	<meta name="generator" content="Hugo 0.145.0">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <title>Vincent Le Corre</title><meta name="Description" content="Personal website of Vincent Le Corre"><meta property="og:url" content="https://www.vincentlecorre.org/">
-  <meta property="og:site_name" content="Vincent Le Corre">
-  <meta property="og:title" content="Home">
-  <meta property="og:description" content="2-Minute Executive Summary The Crimes
-McDonald’s ran global promotional games, falsely presenting them as fair games of chance. In reality, the company repeatedly misrepresented the odds of winning, often outright falsifying the real probabilities. This was not just deceptive marketing. It was calculated fraud of the most vicious kind.
-These mafia-like methods constitute mass-marketing consumer fraud and money laundering. They also fall within the scope of the United Nations Convention against Transnational Organized Crime (Palermo Convention), in particular Article 5, which criminalizes participation in an organized criminal group and serious offenses committed intentionally across borders.">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="website">
+  function applyTheme(pref) {
+    var resolved = pref === "auto" ? getSystemTheme() : pref;
+    document.documentElement.setAttribute("data-theme", resolved);
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Home">
-  <meta name="twitter:description" content="2-Minute Executive Summary The Crimes
-McDonald’s ran global promotional games, falsely presenting them as fair games of chance. In reality, the company repeatedly misrepresented the odds of winning, often outright falsifying the real probabilities. This was not just deceptive marketing. It was calculated fraud of the most vicious kind.
-These mafia-like methods constitute mass-marketing consumer fraud and money laundering. They also fall within the scope of the United Nations Convention against Transnational Organized Crime (Palermo Convention), in particular Article 5, which criminalizes participation in an organized criminal group and serious offenses committed intentionally across borders.">
-<meta name="application-name" content="My cool site">
-<meta name="apple-mobile-web-app-title" content="My cool site">
-<meta name="referrer" content="no-referrer" /><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.vincentlecorre.org/" /><link rel="alternate" href="/index.xml" type="application/rss+xml" title="Vincent Le Corre">
-    <link rel="feed" href="/index.xml" type="application/rss+xml" title="Vincent Le Corre"><link rel="stylesheet" href="/css/style.min.css">
-<link rel="stylesheet" href="/css/custom.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "WebSite",
-        "url": "https:\/\/www.vincentlecorre.org\/","inLanguage": "en","author": {
-                "@type": "Person",
-                "name": "Vincent Le Corre"
-            },"description": "Personal website of Vincent Le Corre","name": "Vincent Le Corre"
+    document.querySelectorAll("[data-theme-set]").forEach(function (btn) {
+      btn.classList.toggle("active", btn.getAttribute("data-theme-set") === pref);
+    });
+  }
+
+  var stored = localStorage.getItem("theme") || "auto";
+  applyTheme(stored);
+
+  document.querySelectorAll("[data-theme-set]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var pref = btn.getAttribute("data-theme-set");
+      localStorage.setItem("theme", pref);
+      applyTheme(pref);
+    });
+  });
+
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function () {
+    if ((localStorage.getItem("theme") || "auto") === "auto") {
+      applyTheme("auto");
     }
-    </script></head>
-    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+  });
+})();
+</script> <div class="lang-switcher"> <button type="button" class="lang-switcher-btn" aria-expanded="false"> English </button> <div class="lang-dropdown"> <a href="/" class="current"> English </a><a href="/fr/"> Français </a><a href="/zh/"> 简体中文 </a><a href="/zh-hant/"> 繁體中文 </a><a href="/de/"> Deutsch </a><a href="/yi/"> ייִדיש </a><a href="/no/"> Norsk bokmål </a><a href="/ko/"> 한국어 </a><a href="/bzh/"> Brezhoneg </a><a href="/ar/"> العربية </a><a href="/es/"> Español </a><a href="/hi/"> हिन्दी </a><a href="/it/"> Italiano </a><a href="/ja/"> 日本語 </a><a href="/nl/"> Nederlands </a><a href="/pl/"> Polski </a><a href="/pt-br/"> Português (Brasil) </a><a href="/ro/"> Română </a><a href="/ru/"> Русский </a><a href="/ua/"> Українська </a> </div> </div> </div> </div> <ul class="nav-links">  </ul> </div> </nav> <script>
+(function () {
+  // Hamburger toggle
+  var hamburger = document.querySelector(".nav-hamburger");
+  var navLinks = document.querySelector(".nav-links");
+  if (hamburger && navLinks) {
+    hamburger.addEventListener("click", function () {
+      var expanded = hamburger.getAttribute("aria-expanded") === "true";
+      hamburger.setAttribute("aria-expanded", String(!expanded));
+      navLinks.classList.toggle("open");
+    });
+  }
 
-        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
-    <div class="header-wrapper">
-        <div class="header-title">
-            <a href="/" title="Vincent Le Corre">Vincent Le Corre</a>
-        </div>
-        <div class="menu">
-            <div class="menu-inner"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-                </a><a href="javascript:void(0);" class="menu-item language" title="Select Language">
-                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
-                    
-                    <span class="ps-1">English 🇺🇸🇬🇧🇮🇪🇨🇦🇦🇺🇳🇿</span>
-                    
-                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;">
-                                <option value="https://ar.vincentlecorre.org/">Arabic • العربية 🇸🇦</option>
-                                
-                                <option value="https://www.lushengqiao.com/">Chinese simplified • 简体中文 🇨🇳</option>
-                                
-                                <option value="https://zh-hant.lushengqiao.com/">Chinese traditional • 繁體中文 🇭🇰🇲🇴</option>
-                                
-                                <option value="https://nl.vincentlecorre.org/">Dutch • Nederlands 🇳🇱🇧🇪</option>
-                                
-                                <option value="https://www.vincentlecorre.org/" selected>English 🇺🇸🇬🇧🇮🇪🇨🇦🇦🇺🇳🇿</option>
-                                
-                                <option value="https://www.vincentlecorre.fr/">French • Français 🇫🇷🇧🇪🇨🇦🇨🇭🇨🇩🇸🇳🇨🇲🌍</option>
-                                
-                                <option value="https://de.vincentlecorre.org/">German • Deutsch 🇩🇪🇦🇹🇨🇭</option>
-                                
-                                <option value="https://hi.vincentlecorre.org/">Hindi • हिन्दी 🇮🇳</option>
-                                
-                                <option value="https://it.vincentlecorre.org/">Italian • Italiano 🇮🇹🇨🇭🇸🇲🇻🇦</option>
-                                
-                                <option value="https://ja.vincentlecorre.org/">Japanese • 日本語 🇯🇵</option>
-                                
-                                <option value="https://pl.vincentlecorre.org/">Polish • Polski 🇵🇱</option>
-                                
-                                <option value="https://pt-br.vincentlecorre.org/">Portuguese • Português 🇧🇷🇵🇹🇦🇴🇲🇿🌎</option>
-                                
-                                <option value="https://ro.vincentlecorre.org/">Romanian • Română 🇷🇴🇲🇩</option>
-                                
-                                <option value="https://ru.vincentlecorre.org/">Russian • Русский 🇷🇺</option>
-                                
-                                <option value="https://es.vincentlecorre.org/">Spanish • Español 🇪🇸🇦🇷🇲🇽</option>
-                                
-                                <option value="https://ua.vincentlecorre.org/">Ukrainian • Українська 🇺🇦</option>
-                                </select>
-                </a></div>
-        </div>
-    </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="/" title="Vincent Le Corre">Vincent Le Corre</a>
-            </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <div class="menu" id="menu-mobile"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">
-                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
-                    
-                    <span class="ps-1">English 🇺🇸🇬🇧🇮🇪🇨🇦🇦🇺🇳🇿</span>
-                    <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
-                    
-                    <select class="language-select" onchange="location = this.value;">
-                                <option value="https://ar.vincentlecorre.org/">Arabic • العربية 🇸🇦</option>
-                                
-                                <option value="https://www.lushengqiao.com/">Chinese simplified • 简体中文 🇨🇳</option>
-                                
-                                <option value="https://zh-hant.lushengqiao.com/">Chinese traditional • 繁體中文 🇭🇰🇲🇴</option>
-                                
-                                <option value="https://nl.vincentlecorre.org/">Dutch • Nederlands 🇳🇱🇧🇪</option>
-                                
-                                <option value="https://www.vincentlecorre.org/" selected>English 🇺🇸🇬🇧🇮🇪🇨🇦🇦🇺🇳🇿</option>
-                                
-                                <option value="https://www.vincentlecorre.fr/">French • Français 🇫🇷🇧🇪🇨🇦🇨🇭🇨🇩🇸🇳🇨🇲🌍</option>
-                                
-                                <option value="https://de.vincentlecorre.org/">German • Deutsch 🇩🇪🇦🇹🇨🇭</option>
-                                
-                                <option value="https://hi.vincentlecorre.org/">Hindi • हिन्दी 🇮🇳</option>
-                                
-                                <option value="https://it.vincentlecorre.org/">Italian • Italiano 🇮🇹🇨🇭🇸🇲🇻🇦</option>
-                                
-                                <option value="https://ja.vincentlecorre.org/">Japanese • 日本語 🇯🇵</option>
-                                
-                                <option value="https://pl.vincentlecorre.org/">Polish • Polski 🇵🇱</option>
-                                
-                                <option value="https://pt-br.vincentlecorre.org/">Portuguese • Português 🇧🇷🇵🇹🇦🇴🇲🇿🌎</option>
-                                
-                                <option value="https://ro.vincentlecorre.org/">Romanian • Română 🇷🇴🇲🇩</option>
-                                
-                                <option value="https://ru.vincentlecorre.org/">Russian • Русский 🇷🇺</option>
-                                
-                                <option value="https://es.vincentlecorre.org/">Spanish • Español 🇪🇸🇦🇷🇲🇽</option>
-                                
-                                <option value="https://ua.vincentlecorre.org/">Ukrainian • Українська 🇺🇦</option>
-                                </select>
-                </a></div>
-    </div>
-</header><main class="main">
-                <div class="container"><div class="page home" data-home="posts"><div class="home-profile"><div style="
-  text-align: center;
-  font-size: 1.6em;
-  line-height: 2;
-  letter-spacing: 0.3em;
-  font-weight: bold;
-">
-  <span style="letter-spacing: 0.1em;">Vincent  Le  Corre    </span><br>
-  <span>陆</span><span>　</span><span>圣</span><span>　</span><span>乔</span><br>
-  <span>光</span><span>　</span><span>之</span><span>　</span><span>树</span><br>
-  <span>神</span><span>　</span><span>战</span><span>　</span><span>士</span>
-</div>
-<div class="home-avatar"><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/avatar-blue-color-shirt-512px-512px.jpg"
-        data-srcset="/images/avatar-blue-color-shirt-512px-512px.jpg, /images/avatar-blue-color-shirt-512px-512px.jpg 1.5x, /images/avatar-blue-color-shirt-512px-512px.jpg 2x"
-        data-sizes="auto"
-        alt="/images/avatar-blue-color-shirt-512px-512px.jpg"
-        title="/images/avatar-blue-color-shirt-512px-512px.jpg" width="512" height="512" /></div><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="https://github.com/ecthrwatch" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://linkedin.com/in/x-v-france" title="LinkedIn" target="_blank" rel="noopener noreffer me"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a><a href="https://x.com/ecthrwatch" title="X" target="_blank" rel="noopener noreffer me"><i class="fab fa-x fa-fw" aria-hidden="true"></i></a><a href="https://t.me/vincentlecorre" title="Telegram" target="_blank" rel="noopener noreffer me"><i class="fab fa-telegram-plane fa-fw" aria-hidden="true"></i></a><a href="https://weibo.com/7055094295" title="微博" target="_blank" rel="noopener noreffer me"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="mailto:vincent@ecthrwatch.org" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a></div></div>
-<div class="single">
-                <div class="content" id="content"><div style="text-align: center; font-size: 1.6em; font-weight: bold; margin-top: 1.5em; margin-bottom: 1em;">
-  2-Minute Executive Summary
-</div>
-<p><strong>The Crimes</strong><br>
-McDonald’s ran global promotional games, falsely presenting them as fair games of chance. In reality, the company repeatedly misrepresented the odds of winning, often outright falsifying the real probabilities. This was not just deceptive marketing. It was calculated fraud of the most vicious kind.</p>
-<p>These mafia-like methods constitute mass-marketing consumer fraud and money laundering. They also fall within the scope of the <strong>United Nations Convention against Transnational Organized Crime (Palermo Convention)</strong>, in particular Article 5, which criminalizes participation in an organized criminal group and serious offenses committed intentionally across borders.</p>
-<p><strong>The Scale of the Crimes</strong><br>
-Over more than three decades, McDonald’s deceived billions of people across dozens of countries. The total economic impact includes the loss of a legitimate chance to win prizes, market manipulation, and unfair competitive advantage. Altogether, the value affected likely reaches into the trillions of dollars. Tens of thousands of franchisees, though legally distinct, helped implement these schemes. While many may claim ignorance, their conduct often reveals criminal negligence. If the law were properly enforced, McDonald’s and its franchisees would be declared bankrupt and criminally prosecuted.</p>
-<p><strong>France’s Guilty Silence, U.S. Intelligence Steps In</strong><br>
-In France, court documents were falsified multiple times. McDonald’s appears to have received internal protection involving high-ranking officials, magistrates (including public prosecutors and judges), and lawmakers who failed in their constitutional duty of parliamentary oversight. This protection may have reached as high as ministers, prime ministers, and possibly even President Emmanuel Macron. If confirmed, this would constitute a major constitutional crisis.</p>
-<p>In China, where I currently reside, I was contacted by individuals I had already been in contact with. They had previously offered me to work for them, without disclosing who they truly were. It was only after they acknowledged the seriousness of McDonald’s crimes that they identified themselves as U.S. intelligence operatives. After revealing their true identity, they renewed their offer for me to work with them.</p>
-<p><strong>Peaceful Coexistence Between Nations, Under God</strong><br>
-I love both China and the United States. But I love my wife and my parents-in-law even more. My father-in-law is a retired CPC official. Accepting an offer from the American military intelligence services would have placed my family in serious danger. I now live under the constant threat of retaliation, not only from Chinese authorities, but also from France and the United States.<br>
-The only path I can follow with a <em><strong>clear conscience</strong></em> is to live by my <em>faith</em>, to answer to God rather than to governments, and to remain loyal to truth, justice, and the ideal of peaceful coexistence between nations, as a moral duty before God.</p>
-<div style="text-align: center; font-style: italic;">
-“But let justice roll down like waters, and righteousness like an ever-flowing stream.”<br>
+  // Language switcher dropdown
+  var langBtn = document.querySelector(".lang-switcher-btn");
+  var langDropdown = document.querySelector(".lang-dropdown");
+  if (langBtn && langDropdown) {
+    langBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var expanded = langBtn.getAttribute("aria-expanded") === "true";
+      langBtn.setAttribute("aria-expanded", String(!expanded));
+      langDropdown.classList.toggle("open");
+    });
+
+    document.addEventListener("click", function () {
+      langBtn.setAttribute("aria-expanded", "false");
+      langDropdown.classList.remove("open");
+    });
+  }
+})();
+</script> <main>  <style>
+    .profile-home { text-align: center; padding: 2rem 0 1rem; }
+    .profile-avatar { width: 180px; height: 180px; border-radius: 50%; display: inline-block; object-fit: cover; }
+    .profile-name { font-size: 1.8rem; margin: 1.25rem 0 0.75rem; line-height: 1.3; }
+    .profile-subtitle { font-size: 1.05rem; line-height: 1.8; max-width: 42rem; margin: 0 auto 1.25rem; }
+    .profile-social { display: flex; justify-content: center; gap: 0.9rem; flex-wrap: wrap; }
+    .profile-social-bottom { margin: 2.5rem 0 1rem; }
+    .profile-social .social-icon { display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border: 1px solid var(--color-nav-border, #ccc); border-radius: 50%; font-size: 17px; line-height: 1; font-family: 'Source Sans 3', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; text-decoration: none; opacity: 0.75; transition: opacity 0.2s, border-color 0.2s; }
+    .profile-social .social-icon:hover { opacity: 1; text-decoration: none; }
+    .profile-page { max-width: 56rem; margin: 3rem auto; padding: 2rem 1.5rem; background-color: var(--color-content-bg); border-radius: 0.25rem; }
+    .profile-page .exec-summary { margin-top: 1.5rem; }
+  </style> <div class="profile-page"> <div class="profile-home"> <img src="/images/vlc_portrait.jpeg" alt="Vincent Le Corre" class="profile-avatar"> <h1 class="profile-name">Vincent Le Corre</h1>  </div> <div class="exec-summary prose"><!-- ALMOST-BLANK homepage (decision #116, element list approved by Vincent
+     2026-08-03: name + one epigraph + the language switcher, nothing else.
+     The engine layout already renders the photo + name + social icons, so this
+     body carries ONLY the epigraph; the
+     v3 fact-list stays preserved at page-versions/2026-08-02_1633+0800_v3-factlist/
+     and in git history). Built by session 112bf21c. --><div style="text-align: center; font-style: italic;">
+"But let justice roll down like waters, and righteousness like an ever-flowing stream."<br>
 Amos 5:24 <!-- English Standard Version (ESV) -->
-</div>
-<p>Even when courts are silent, when institutions collapse, and when the powerful abuse their position, divine justice does not sleep.<br>
-It flows onward. Relentless. Purifying. Unstoppable.<br>
-A well-known Chinese saying captures this same unstoppable force:</p>
-<div style="text-align: center;">
-「<span style="font-weight: bold;">长江黄河不会倒流</span>」<br>
-<span style="font-style: italic;">“The Yangtze River and the Yellow River will never flow backward.”</span>
-</div>
-<p>It reminds us that some forces cannot be reversed, just as the will of our Creator moves forward, unfailing and irresistible.<br>
-Divine justice does not hesitate. It breaks through darkness, purifies corruption, and it <em>always</em> prevails.</p>
-<p>And just as the Yangtze River and the Yellow River always follow their course to the end, I too will follow this narrow path toward the only true victory: the one that restores justice, brings peace, and fulfills the will of Heaven.</p>
-<div style="text-align: center; font-size: 1.25em; line-height: 1.6;">
-Vincent Le Corre<br>
-陆圣乔<br>
-(Lù Shèngqiáo)
-</div>
-<!-- Spacer div for consistent vertical spacing -->
-<div style="height: 1.5em;"></div>
-<div style="text-align: center;">
-
-
-
-
-
-
-
-
-  
-  
-  
-
-  
-    
-    
-    
-  
-    
-    
-    
-  
-    
-    
-    
-  
-
-  <img 
-    src="/images/TreeOfLight_Justice_EagleDove_Final_vlc002_hu_879f74566234cfac.jpg" 
-    srcset="/images/TreeOfLight_Justice_EagleDove_Final_vlc002_hu_1f92c5901db804b5.jpg 400w, /images/TreeOfLight_Justice_EagleDove_Final_vlc002_hu_879f74566234cfac.jpg 800w, /images/TreeOfLight_Justice_EagleDove_Final_vlc002_hu_4390f048958ab3ac.jpg 1200w" 
-    sizes="100vw" 
-    alt="" 
-    class="" 
-    style="max-width: 250px; width: 100%; height: auto;" 
-    loading="lazy" 
-    decoding="async">
-
-
-</div>
-<!-- Spacer div for consistent vertical spacing -->
-<div style="height: 1.5em;"></div>
-<p>
-  <a href="https://www.linkedin.com/in/x-v-france">Click here to follow me on LinkedIn</a><br/>
-  You can also send me an email at this address: <a href="mailto:vincent@ecthrwatch.org">vincent@ecthrwatch.org</a>
-</p>
-<hr>
-<!--
-
-
-
-
-
-
-
-
-  
-  
-  
-
-  
-    
-    
-    
-  
-    
-    
-    
-  
-    
-    
-    
-  
-
-  <img 
-    src="/images/TreeOfLight_Justice_EagleDove_Horses_Final_vlc001_hu_855582c8d544e52b.jpg" 
-    srcset="/images/TreeOfLight_Justice_EagleDove_Horses_Final_vlc001_hu_daebec80012576a.jpg 400w, /images/TreeOfLight_Justice_EagleDove_Horses_Final_vlc001_hu_855582c8d544e52b.jpg 800w, /images/TreeOfLight_Justice_EagleDove_Horses_Final_vlc001_hu_3dbd1f58774ccdca.jpg 1200w" 
-    sizes="100vw" 
-    alt="A symbolic scene showing a majestic tree illuminated by a beam of light, with a white dove and bald eagle in flight, two horses galloping freely, and a set of bronze scales resting in the grass—representing justice, freedom, and divine harmony." 
-    class="" 
-    style="max-width: 400px; width: 100%; height: auto;" 
-    loading="lazy" 
-    decoding="async">
-
-
--->
-<!-- [ECtHRwatch.org](https://www.ECtHRwatch.org) -->
-<!-- Check out the [timeline of events and open letters](https://www.ecthrwatch.org/timeline/) on my website [ECtHRwatch.org](https://www.ECtHRwatch.org). -->
-</div>
-            </div></div></div>
-            </main><footer class="footer">
-        <div class="footer-container">
-
-            <div class="language-list" style="text-align: center; font-size: 0.9em; opacity: 0.8; padding-top: 1em;"><a href="/" style="text-decoration: none; color: inherit; white-space: nowrap; transition: all 0.2s;" onmouseover="this.style.textDecoration='underline'; this.style.color='#007acc';" onmouseout="this.style.textDecoration='none'; this.style.color='inherit';">
-                  English 🇺🇸🇬🇧🇮🇪🇨🇦🇦🇺🇳🇿
-                </a>&nbsp;|&nbsp;<a href="https://ar.vincentlecorre.org/" style="text-decoration: none; color: inherit; white-space: nowrap; transition: all 0.2s;" onmouseover="this.style.textDecoration='underline'; this.style.color='#007acc';" onmouseout="this.style.textDecoration='none'; this.style.color='inherit';">
-                  Arabic • العربية 🇸🇦
-                </a>&nbsp;|&nbsp;<a href="https://www.lushengqiao.com/" style="text-decoration: none; color: inherit; white-space: nowrap; transition: all 0.2s;" onmouseover="this.style.textDecoration='underline'; this.style.color='#007acc';" onmouseout="this.style.textDecoration='none'; this.style.color='inherit';">
-                  Chinese simplified • 简体中文 🇨🇳
-                </a>&nbsp;|&nbsp;<a href="https://zh-hant.lushengqiao.com/" style="text-decoration: none; color: inherit; white-space: nowrap; transition: all 0.2s;" onmouseover="this.style.textDecoration='underline'; this.style.color='#007acc';" onmouseout="this.style.textDecoration='none'; this.style.color='inherit';">
-                  Chinese traditional • 繁體中文 🇭🇰🇲🇴
-                </a>&nbsp;|&nbsp;<a href="https://nl.vincentlecorre.org/" style="text-decoration: none; color: inherit; white-space: nowrap; transition: all 0.2s;" onmouseover="this.style.textDecoration='underline'; this.style.color='#007acc';" onmouseout="this.style.textDecoration='none'; this.style.color='inherit';">
-                  Dutch • Nederlands 🇳🇱🇧🇪
-                </a>&nbsp;|&nbsp;<a href="https://www.vincentlecorre.fr/" style="text-decoration: none; color: inherit; white-space: nowrap; transition: all 0.2s;" onmouseover="this.style.textDecoration='underline'; this.style.color='#007acc';" onmouseout="this.style.textDecoration='none'; this.style.color='inherit';">
-                  French • Français 🇫🇷🇧🇪🇨🇦🇨🇭🇨🇩🇸🇳🇨🇲🌍
-                </a>&nbsp;|&nbsp;<a href="https://de.vincentlecorre.org/" style="text-decoration: none; color: inherit; white-space: nowrap; transition: all 0.2s;" onmouseover="this.style.textDecoration='underline'; this.style.color='#007acc';" onmouseout="this.style.textDecoration='none'; this.style.color='inherit';">
-                  German • Deutsch 🇩🇪🇦🇹🇨🇭
-                </a>&nbsp;|&nbsp;<a href="https://hi.vincentlecorre.org/" style="text-decoration: none; color: inherit; white-space: nowrap; transition: all 0.2s;" onmouseover="this.style.textDecoration='underline'; this.style.color='#007acc';" onmouseout="this.style.textDecoration='none'; this.style.color='inherit';">
-                  Hindi • हिन्दी 🇮🇳
-                </a>&nbsp;|&nbsp;<a href="https://it.vincentlecorre.org/" style="text-decoration: none; color: inherit; white-space: nowrap; transition: all 0.2s;" onmouseover="this.style.textDecoration='underline'; this.style.color='#007acc';" onmouseout="this.style.textDecoration='none'; this.style.color='inherit';">
-                  Italian • Italiano 🇮🇹🇨🇭🇸🇲🇻🇦
-                </a>&nbsp;|&nbsp;<a href="https://ja.vincentlecorre.org/" style="text-decoration: none; color: inherit; white-space: nowrap; transition: all 0.2s;" onmouseover="this.style.textDecoration='underline'; this.style.color='#007acc';" onmouseout="this.style.textDecoration='none'; this.style.color='inherit';">
-                  Japanese • 日本語 🇯🇵
-                </a>&nbsp;|&nbsp;<a href="https://pl.vincentlecorre.org/" style="text-decoration: none; color: inherit; white-space: nowrap; transition: all 0.2s;" onmouseover="this.style.textDecoration='underline'; this.style.color='#007acc';" onmouseout="this.style.textDecoration='none'; this.style.color='inherit';">
-                  Polish • Polski 🇵🇱
-                </a>&nbsp;|&nbsp;<a href="https://pt-br.vincentlecorre.org/" style="text-decoration: none; color: inherit; white-space: nowrap; transition: all 0.2s;" onmouseover="this.style.textDecoration='underline'; this.style.color='#007acc';" onmouseout="this.style.textDecoration='none'; this.style.color='inherit';">
-                  Portuguese • Português 🇧🇷🇵🇹🇦🇴🇲🇿🌎
-                </a>&nbsp;|&nbsp;<a href="https://ro.vincentlecorre.org/" style="text-decoration: none; color: inherit; white-space: nowrap; transition: all 0.2s;" onmouseover="this.style.textDecoration='underline'; this.style.color='#007acc';" onmouseout="this.style.textDecoration='none'; this.style.color='inherit';">
-                  Romanian • Română 🇷🇴🇲🇩
-                </a>&nbsp;|&nbsp;<a href="https://ru.vincentlecorre.org/" style="text-decoration: none; color: inherit; white-space: nowrap; transition: all 0.2s;" onmouseover="this.style.textDecoration='underline'; this.style.color='#007acc';" onmouseout="this.style.textDecoration='none'; this.style.color='inherit';">
-                  Russian • Русский 🇷🇺
-                </a>&nbsp;|&nbsp;<a href="https://es.vincentlecorre.org/" style="text-decoration: none; color: inherit; white-space: nowrap; transition: all 0.2s;" onmouseover="this.style.textDecoration='underline'; this.style.color='#007acc';" onmouseout="this.style.textDecoration='none'; this.style.color='inherit';">
-                  Spanish • Español 🇪🇸🇦🇷🇲🇽
-                </a>&nbsp;|&nbsp;<a href="https://ua.vincentlecorre.org/" style="text-decoration: none; color: inherit; white-space: nowrap; transition: all 0.2s;" onmouseover="this.style.textDecoration='underline'; this.style.color='#007acc';" onmouseout="this.style.textDecoration='none'; this.style.color='inherit';">
-                  Ukrainian • Українська 🇺🇦
-                </a></div>
-            <br><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://www.linkedin.com/in/x-v-france/" target="_blank">Vincent Le Corre</a></span></div>
-        </div>
-        <div style="height: 2em;"><br><br><br></div>
-    </footer></div>
-
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
-                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
-            </a>
-        </div>
-
-        <div id="fixed-buttons-hidden"><a href="#" id="view-comments" class="fixed-button" title="View Comments">
-                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
-            </a>
-        </div><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.2/sharer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script>window.config={"data":{"id-1":"I uncovered McDonald’s darkest secrets.\u003cbr/\u003e Billions of dollars worth of prizes, promised to customers, never meant to be won.\u003cbr/\u003e The odds were rigged. The fix was global. No one stopped it.\u003cbr/\u003e The European Court of Human Rights took my case.\u003cbr/\u003e In China, U.S. intelligence operatives approached me. Everything changed.\u003cbr/\u003e Now my family and I risk death.\u003cbr/\u003e My crime? Telling the truth."},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"]},"duration":-1,"speed":100}};</script><script src="/js/theme.min.js"></script></body>
-</html>
+</div></div> <div class="profile-social profile-social-bottom"> <a href="mailto:vincent@ecthrwatch.org" title="Email" class="social-icon"> ✉      </a><a href="https://www.linkedin.com/in/x-v-france/" title="LinkedIn" class="social-icon">  in     </a><a href="https://x.com/ecthrwatch" title="X" class="social-icon">   X    </a><a href="https://github.com/ecthrwatch" title="GitHub" class="social-icon">    GH   </a><a href="https://weibo.com/7055094295" title="Weibo" class="social-icon">     微  </a><a href="https://t.me/vincentlecorre" title="Telegram" class="social-icon">      ✈ </a> </div> </div>  </main> <footer class="footer"> <div class="footer-links">  <a href="/">Home</a> <span class="footer-sep"> | </span> <a href="https://archives.vincentlecorre.org">Archives</a>  </div> <div class="footer-org">Vincent Le Corre</div> <div>&copy; 2021-2026 <a href="https://www.linkedin.com/in/x-v-france/">Vincent Le Corre</a></div> </footer> </body></html>

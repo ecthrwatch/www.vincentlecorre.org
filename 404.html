@@ -1,129 +1,73 @@
-<!DOCTYPE html>
-<html lang="en" >
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noarchive"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet"><title>404 — Page Not Found | Vincent Le Corre</title><link rel="canonical" href="https://www.vincentlecorre.org/404/"><meta property="og:site_name" content="Vincent Le Corre"><meta property="og:title" content="404 — Page Not Found | Vincent Le Corre"><meta property="og:type" content="website"><meta property="og:url" content="https://www.vincentlecorre.org/404/"><meta property="og:locale" content="en"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="404 — Page Not Found | Vincent Le Corre"><script>
+      (function () {
+        var pref = localStorage.getItem("theme") || "auto";
+        var resolved = pref === "auto"
+          ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+          : pref;
+        document.documentElement.setAttribute("data-theme", resolved);
+      })();
+    </script><style>.page-container[data-astro-cid-zetdm5md]{max-width:56rem;margin:3rem auto;padding:4rem 1.5rem;background-color:var(--color-content-bg);border-radius:.25rem}.page-container[data-astro-cid-zetdm5md] h1[data-astro-cid-zetdm5md]{font-size:2.25rem;font-weight:800;margin-bottom:1rem}.page-container[data-astro-cid-zetdm5md] p[data-astro-cid-zetdm5md]{margin-bottom:1rem;line-height:1.7}
+</style>
+<link rel="stylesheet" href="/_astro/Base.Cch7lTjp.css"></head> <body> <nav class="nav"> <div class="nav-inner">  <div class="nav-row-1"> <a href="/" class="nav-brand">Vincent Le Corre</a> <button class="nav-hamburger" type="button" aria-expanded="false" aria-label="Menu"> <span class="hamburger-label">Menu &rarr;</span> <span class="hamburger-icon"> <span class="bar"></span> <span class="bar"></span> <span class="bar"></span> </span> </button> <div class="nav-controls"> <div class="theme-toggle" role="group" aria-label="Theme"> <button type="button" data-theme-set="light">Light</button> <button type="button" data-theme-set="dark">Dark</button> <button type="button" data-theme-set="auto">Auto</button> </div> <script>
+(function () {
+  function getSystemTheme() {
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <title>404 Page not found - Vincent Le Corre</title><meta name="Description" content="Personal website of Vincent Le Corre"><meta property="og:url" content="https://www.vincentlecorre.org/404.html">
-  <meta property="og:site_name" content="Vincent Le Corre">
-  <meta property="og:title" content="404 Page not found">
-  <meta property="og:description" content="Personal website of Vincent Le Corre">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="website">
+  function applyTheme(pref) {
+    var resolved = pref === "auto" ? getSystemTheme() : pref;
+    document.documentElement.setAttribute("data-theme", resolved);
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="404 Page not found">
-  <meta name="twitter:description" content="Personal website of Vincent Le Corre">
-<meta name="application-name" content="My cool site">
-<meta name="apple-mobile-web-app-title" content="My cool site">
-<meta name="referrer" content="no-referrer" /><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.vincentlecorre.org/404.html" /><link rel="stylesheet" href="/css/style.min.css">
-<link rel="stylesheet" href="/css/custom.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript></head>
-    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+    document.querySelectorAll("[data-theme-set]").forEach(function (btn) {
+      btn.classList.toggle("active", btn.getAttribute("data-theme-set") === pref);
+    });
+  }
 
-        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
-    <div class="header-wrapper">
-        <div class="header-title">
-            <a href="/" title="Vincent Le Corre">Vincent Le Corre</a>
-        </div>
-        <div class="menu">
-            <div class="menu-inner"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-                </a><a href="javascript:void(0);" class="menu-item language" title="Select Language">
-                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
-                    
-                    <span class="ps-1">English 🇺🇸🇬🇧🇮🇪🇨🇦🇦🇺🇳🇿</span>
-                    
-                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/404.html" selected>English 🇺🇸🇬🇧🇮🇪🇨🇦🇦🇺🇳🇿</option><option value="/ar/404.html">Arabic • العربية 🇸🇦</option><option value="/zh-cn/404.html">Chinese simplified • 简体中文 🇨🇳</option><option value="/zh-tw/404.html">Chinese traditional • 繁體中文 🇭🇰🇲🇴</option><option value="/nl/404.html">Dutch • Nederlands 🇳🇱🇧🇪</option><option value="/fr/404.html">French • Français 🇫🇷🇧🇪🇨🇦🇨🇭🇨🇩🇸🇳🇨🇲🌍</option><option value="/de/404.html">German • Deutsch 🇩🇪🇦🇹🇨🇭</option><option value="/hi/404.html">Hindi • हिन्दी 🇮🇳</option><option value="/it/404.html">Italian • Italiano 🇮🇹🇨🇭🇸🇲🇻🇦</option><option value="/ja/404.html">Japanese • 日本語 🇯🇵</option><option value="/pl/404.html">Polish • Polski 🇵🇱</option><option value="/pt-br/404.html">Portuguese • Português 🇧🇷🇵🇹🇦🇴🇲🇿🌎</option><option value="/ro/404.html">Romanian • Română 🇷🇴🇲🇩</option><option value="/ru/404.html">Russian • Русский 🇷🇺</option><option value="/es/404.html">Spanish • Español 🇪🇸🇦🇷🇲🇽</option><option value="/uk/404.html">Ukrainian • Українська 🇺🇦</option></select>
-                </a></div>
-        </div>
-    </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="/" title="Vincent Le Corre">Vincent Le Corre</a>
-            </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <div class="menu" id="menu-mobile"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">
-                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
-                    
-                    <span class="ps-1">English 🇺🇸🇬🇧🇮🇪🇨🇦🇦🇺🇳🇿</span>
-                    <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
-                    
-                    <select class="language-select" onchange="location = this.value;"><option value="/404.html" selected>English 🇺🇸🇬🇧🇮🇪🇨🇦🇦🇺🇳🇿</option><option value="/ar/404.html">Arabic • العربية 🇸🇦</option><option value="/zh-cn/404.html">Chinese simplified • 简体中文 🇨🇳</option><option value="/zh-tw/404.html">Chinese traditional • 繁體中文 🇭🇰🇲🇴</option><option value="/nl/404.html">Dutch • Nederlands 🇳🇱🇧🇪</option><option value="/fr/404.html">French • Français 🇫🇷🇧🇪🇨🇦🇨🇭🇨🇩🇸🇳🇨🇲🌍</option><option value="/de/404.html">German • Deutsch 🇩🇪🇦🇹🇨🇭</option><option value="/hi/404.html">Hindi • हिन्दी 🇮🇳</option><option value="/it/404.html">Italian • Italiano 🇮🇹🇨🇭🇸🇲🇻🇦</option><option value="/ja/404.html">Japanese • 日本語 🇯🇵</option><option value="/pl/404.html">Polish • Polski 🇵🇱</option><option value="/pt-br/404.html">Portuguese • Português 🇧🇷🇵🇹🇦🇴🇲🇿🌎</option><option value="/ro/404.html">Romanian • Română 🇷🇴🇲🇩</option><option value="/ru/404.html">Russian • Русский 🇷🇺</option><option value="/es/404.html">Spanish • Español 🇪🇸🇦🇷🇲🇽</option><option value="/uk/404.html">Ukrainian • Українська 🇺🇦</option></select>
-                </a></div>
-    </div>
-</header><main class="main">
-                <div class="container"><div class="page" id="content-404">
-        <h1 id="error-emoji"></h1>
-        <p class="error-text">The page you&#39;re looking for doesn&#39;t exist. Sorry.&nbsp;
-            <a href="javascript:void(0);" title="Back" onclick="window.history.back();"><i class="far fa-hand-point-left fa-fw" aria-hidden="true"></i></a>
-        </p>
-    </div>
-    <script>
-        (function() {
-            var emojiArray = ['\\(o_o)/', '(˚Δ˚)b', '(^-^*)', '(≥o≤)', '(^_^)b', '(·_·)','(=\'X\'=)', '(>_<)', '(;-;)'];
-            document.getElementById('error-emoji').appendChild(document.createTextNode(emojiArray[Math.floor(Math.random() * emojiArray.length)]));
-        })();
-    </script></div>
-            </main><footer class="footer">
-        <div class="footer-container">
+  var stored = localStorage.getItem("theme") || "auto";
+  applyTheme(stored);
 
-            <div class="language-list" style="text-align: center; font-size: 0.9em; opacity: 0.8; padding-top: 1em;"><a href="/" style="text-decoration: none; color: inherit; white-space: nowrap; transition: all 0.2s;" onmouseover="this.style.textDecoration='underline'; this.style.color='#007acc';" onmouseout="this.style.textDecoration='none'; this.style.color='inherit';">
-                  English 🇺🇸🇬🇧🇮🇪🇨🇦🇦🇺🇳🇿
-                </a>&nbsp;|&nbsp;<a href="https://ar.vincentlecorre.org/" style="text-decoration: none; color: inherit; white-space: nowrap; transition: all 0.2s;" onmouseover="this.style.textDecoration='underline'; this.style.color='#007acc';" onmouseout="this.style.textDecoration='none'; this.style.color='inherit';">
-                  Arabic • العربية 🇸🇦
-                </a>&nbsp;|&nbsp;<a href="https://www.lushengqiao.com/" style="text-decoration: none; color: inherit; white-space: nowrap; transition: all 0.2s;" onmouseover="this.style.textDecoration='underline'; this.style.color='#007acc';" onmouseout="this.style.textDecoration='none'; this.style.color='inherit';">
-                  Chinese simplified • 简体中文 🇨🇳
-                </a>&nbsp;|&nbsp;<a href="https://zh-hant.lushengqiao.com/" style="text-decoration: none; color: inherit; white-space: nowrap; transition: all 0.2s;" onmouseover="this.style.textDecoration='underline'; this.style.color='#007acc';" onmouseout="this.style.textDecoration='none'; this.style.color='inherit';">
-                  Chinese traditional • 繁體中文 🇭🇰🇲🇴
-                </a>&nbsp;|&nbsp;<a href="https://nl.vincentlecorre.org/" style="text-decoration: none; color: inherit; white-space: nowrap; transition: all 0.2s;" onmouseover="this.style.textDecoration='underline'; this.style.color='#007acc';" onmouseout="this.style.textDecoration='none'; this.style.color='inherit';">
-                  Dutch • Nederlands 🇳🇱🇧🇪
-                </a>&nbsp;|&nbsp;<a href="https://www.vincentlecorre.fr/" style="text-decoration: none; color: inherit; white-space: nowrap; transition: all 0.2s;" onmouseover="this.style.textDecoration='underline'; this.style.color='#007acc';" onmouseout="this.style.textDecoration='none'; this.style.color='inherit';">
-                  French • Français 🇫🇷🇧🇪🇨🇦🇨🇭🇨🇩🇸🇳🇨🇲🌍
-                </a>&nbsp;|&nbsp;<a href="https://de.vincentlecorre.org/" style="text-decoration: none; color: inherit; white-space: nowrap; transition: all 0.2s;" onmouseover="this.style.textDecoration='underline'; this.style.color='#007acc';" onmouseout="this.style.textDecoration='none'; this.style.color='inherit';">
-                  German • Deutsch 🇩🇪🇦🇹🇨🇭
-                </a>&nbsp;|&nbsp;<a href="https://hi.vincentlecorre.org/" style="text-decoration: none; color: inherit; white-space: nowrap; transition: all 0.2s;" onmouseover="this.style.textDecoration='underline'; this.style.color='#007acc';" onmouseout="this.style.textDecoration='none'; this.style.color='inherit';">
-                  Hindi • हिन्दी 🇮🇳
-                </a>&nbsp;|&nbsp;<a href="https://it.vincentlecorre.org/" style="text-decoration: none; color: inherit; white-space: nowrap; transition: all 0.2s;" onmouseover="this.style.textDecoration='underline'; this.style.color='#007acc';" onmouseout="this.style.textDecoration='none'; this.style.color='inherit';">
-                  Italian • Italiano 🇮🇹🇨🇭🇸🇲🇻🇦
-                </a>&nbsp;|&nbsp;<a href="https://ja.vincentlecorre.org/" style="text-decoration: none; color: inherit; white-space: nowrap; transition: all 0.2s;" onmouseover="this.style.textDecoration='underline'; this.style.color='#007acc';" onmouseout="this.style.textDecoration='none'; this.style.color='inherit';">
-                  Japanese • 日本語 🇯🇵
-                </a>&nbsp;|&nbsp;<a href="https://pl.vincentlecorre.org/" style="text-decoration: none; color: inherit; white-space: nowrap; transition: all 0.2s;" onmouseover="this.style.textDecoration='underline'; this.style.color='#007acc';" onmouseout="this.style.textDecoration='none'; this.style.color='inherit';">
-                  Polish • Polski 🇵🇱
-                </a>&nbsp;|&nbsp;<a href="https://pt-br.vincentlecorre.org/" style="text-decoration: none; color: inherit; white-space: nowrap; transition: all 0.2s;" onmouseover="this.style.textDecoration='underline'; this.style.color='#007acc';" onmouseout="this.style.textDecoration='none'; this.style.color='inherit';">
-                  Portuguese • Português 🇧🇷🇵🇹🇦🇴🇲🇿🌎
-                </a>&nbsp;|&nbsp;<a href="https://ro.vincentlecorre.org/" style="text-decoration: none; color: inherit; white-space: nowrap; transition: all 0.2s;" onmouseover="this.style.textDecoration='underline'; this.style.color='#007acc';" onmouseout="this.style.textDecoration='none'; this.style.color='inherit';">
-                  Romanian • Română 🇷🇴🇲🇩
-                </a>&nbsp;|&nbsp;<a href="https://ru.vincentlecorre.org/" style="text-decoration: none; color: inherit; white-space: nowrap; transition: all 0.2s;" onmouseover="this.style.textDecoration='underline'; this.style.color='#007acc';" onmouseout="this.style.textDecoration='none'; this.style.color='inherit';">
-                  Russian • Русский 🇷🇺
-                </a>&nbsp;|&nbsp;<a href="https://es.vincentlecorre.org/" style="text-decoration: none; color: inherit; white-space: nowrap; transition: all 0.2s;" onmouseover="this.style.textDecoration='underline'; this.style.color='#007acc';" onmouseout="this.style.textDecoration='none'; this.style.color='inherit';">
-                  Spanish • Español 🇪🇸🇦🇷🇲🇽
-                </a>&nbsp;|&nbsp;<a href="https://ua.vincentlecorre.org/" style="text-decoration: none; color: inherit; white-space: nowrap; transition: all 0.2s;" onmouseover="this.style.textDecoration='underline'; this.style.color='#007acc';" onmouseout="this.style.textDecoration='none'; this.style.color='inherit';">
-                  Ukrainian • Українська 🇺🇦
-                </a></div>
-            <br><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://www.linkedin.com/in/x-v-france/" target="_blank">Vincent Le Corre</a></span></div>
-        </div>
-        <div style="height: 2em;"><br><br><br></div>
-    </footer></div>
+  document.querySelectorAll("[data-theme-set]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var pref = btn.getAttribute("data-theme-set");
+      localStorage.setItem("theme", pref);
+      applyTheme(pref);
+    });
+  });
 
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
-                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
-            </a>
-        </div>
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function () {
+    if ((localStorage.getItem("theme") || "auto") === "auto") {
+      applyTheme("auto");
+    }
+  });
+})();
+</script> <div class="lang-switcher"> <button type="button" class="lang-switcher-btn" aria-expanded="false"> English </button> <div class="lang-dropdown"> <a href="/" class="current"> English </a><a href="/fr/"> Français </a><a href="/zh/"> 简体中文 </a><a href="/zh-hant/"> 繁體中文 </a><a href="/de/"> Deutsch </a><a href="/yi/"> ייִדיש </a><a href="/no/"> Norsk bokmål </a><a href="/ko/"> 한국어 </a><a href="/bzh/"> Brezhoneg </a><a href="/ar/"> العربية </a><a href="/es/"> Español </a><a href="/hi/"> हिन्दी </a><a href="/it/"> Italiano </a><a href="/ja/"> 日本語 </a><a href="/nl/"> Nederlands </a><a href="/pl/"> Polski </a><a href="/pt-br/"> Português (Brasil) </a><a href="/ro/"> Română </a><a href="/ru/"> Русский </a><a href="/ua/"> Українська </a> </div> </div> </div> </div> <ul class="nav-links">  </ul> </div> </nav> <script>
+(function () {
+  // Hamburger toggle
+  var hamburger = document.querySelector(".nav-hamburger");
+  var navLinks = document.querySelector(".nav-links");
+  if (hamburger && navLinks) {
+    hamburger.addEventListener("click", function () {
+      var expanded = hamburger.getAttribute("aria-expanded") === "true";
+      hamburger.setAttribute("aria-expanded", String(!expanded));
+      navLinks.classList.toggle("open");
+    });
+  }
 
-        <div id="fixed-buttons-hidden"><a href="#" id="view-comments" class="fixed-button" title="View Comments">
-                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
-            </a>
-        </div><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.2/sharer.min.js"></script><script>window.config=null;</script><script src="/js/theme.min.js"></script></body>
-</html>
+  // Language switcher dropdown
+  var langBtn = document.querySelector(".lang-switcher-btn");
+  var langDropdown = document.querySelector(".lang-dropdown");
+  if (langBtn && langDropdown) {
+    langBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var expanded = langBtn.getAttribute("aria-expanded") === "true";
+      langBtn.setAttribute("aria-expanded", String(!expanded));
+      langDropdown.classList.toggle("open");
+    });
+
+    document.addEventListener("click", function () {
+      langBtn.setAttribute("aria-expanded", "false");
+      langDropdown.classList.remove("open");
+    });
+  }
+})();
+</script> <main>  <div class="page-container" data-astro-cid-zetdm5md> <h1 data-astro-cid-zetdm5md>404 — Page Not Found</h1> <p data-astro-cid-zetdm5md>The page you requested does not exist on this site. It may have been moved or removed.</p> <p data-astro-cid-zetdm5md><a href="/" data-astro-cid-zetdm5md>Return to homepage</a></p> </div>  </main> <footer class="footer"> <div class="footer-links">  <a href="/">Home</a> <span class="footer-sep"> | </span> <a href="https://archives.vincentlecorre.org">Archives</a>  </div> <div class="footer-org">Vincent Le Corre</div> <div>&copy; 2021-2026 <a href="https://www.linkedin.com/in/x-v-france/">Vincent Le Corre</a></div> </footer> </body></html>
