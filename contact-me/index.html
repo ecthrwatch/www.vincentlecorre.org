@@ -1,0 +1,96 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noarchive"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet"><title>Contact me | Vincent Le Corre</title><link rel="icon" href="/images/icon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/images/icon-180.png"><link rel="canonical" href="https://www.vincentlecorre.org/contact-me/"><meta property="og:site_name" content="Vincent Le Corre"><meta property="og:title" content="Contact me | Vincent Le Corre"><meta property="og:type" content="website"><meta property="og:url" content="https://www.vincentlecorre.org/contact-me/"><meta property="og:locale" content="en"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Contact me | Vincent Le Corre"><script>
+      (function () {
+        var pref = localStorage.getItem("theme") || "auto";
+        var resolved = pref === "auto"
+          ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+          : pref;
+        document.documentElement.setAttribute("data-theme", resolved);
+      })();
+    </script><link rel="stylesheet" href="/_astro/Base.Cch7lTjp.css"></head> <body> <nav class="nav"> <div class="nav-inner">  <div class="nav-row-1"> <a href="/" class="nav-brand">Vincent Le Corre</a> <button class="nav-hamburger" type="button" aria-expanded="false" aria-label="Menu"> <span class="hamburger-label">Menu &rarr;</span> <span class="hamburger-icon"> <span class="bar"></span> <span class="bar"></span> <span class="bar"></span> </span> </button> <div class="nav-controls"> <div class="theme-toggle" role="group" aria-label="Theme"> <button type="button" data-theme-set="light">Light</button> <button type="button" data-theme-set="dark">Dark</button> <button type="button" data-theme-set="auto">Auto</button> </div> <script>
+(function () {
+  function getSystemTheme() {
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+
+  function applyTheme(pref) {
+    var resolved = pref === "auto" ? getSystemTheme() : pref;
+    document.documentElement.setAttribute("data-theme", resolved);
+
+    document.querySelectorAll("[data-theme-set]").forEach(function (btn) {
+      btn.classList.toggle("active", btn.getAttribute("data-theme-set") === pref);
+    });
+  }
+
+  var stored = localStorage.getItem("theme") || "auto";
+  applyTheme(stored);
+
+  document.querySelectorAll("[data-theme-set]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var pref = btn.getAttribute("data-theme-set");
+      localStorage.setItem("theme", pref);
+      applyTheme(pref);
+    });
+  });
+
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function () {
+    if ((localStorage.getItem("theme") || "auto") === "auto") {
+      applyTheme("auto");
+    }
+  });
+})();
+</script> <div class="lang-switcher"> <button type="button" class="lang-switcher-btn" aria-expanded="false"> English </button> <div class="lang-dropdown"> <a href="/bzh/"> Brezhoneg </a><a href="/de/"> Deutsch </a><a href="/" class="current"> English </a><a href="/es/"> Español </a><a href="https://www.vincentlecorre.fr/"> Français </a><a href="/it/"> Italiano </a><a href="/nl/"> Nederlands </a><a href="/no/"> Norsk bokmål </a><a href="/pl/"> Polski </a><a href="/pt-br/"> Português (Brasil) </a><a href="/ro/"> Română </a><a href="/ru/"> Русский </a><a href="/ua/"> Українська </a><a href="/yi/"> ייִדיש </a><a href="/ar/"> العربية </a><a href="/hi/"> हिन्दी </a><a href="/ko/"> 한국어 </a><a href="/ja/"> 日本語 </a><a href="https://www.lushengqiao.com/"> 简体中文 </a><a href="https://www.lushengqiao.com/zh-hant/"> 繁體中文 </a> </div> </div> </div> </div> <ul class="nav-links">  </ul> </div> </nav> <script>
+(function () {
+  // Hamburger toggle
+  var hamburger = document.querySelector(".nav-hamburger");
+  var navLinks = document.querySelector(".nav-links");
+  if (hamburger && navLinks) {
+    hamburger.addEventListener("click", function () {
+      var expanded = hamburger.getAttribute("aria-expanded") === "true";
+      hamburger.setAttribute("aria-expanded", String(!expanded));
+      navLinks.classList.toggle("open");
+    });
+  }
+
+  // Language switcher dropdown
+  var langBtn = document.querySelector(".lang-switcher-btn");
+  var langDropdown = document.querySelector(".lang-dropdown");
+  if (langBtn && langDropdown) {
+    langBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var expanded = langBtn.getAttribute("aria-expanded") === "true";
+      langBtn.setAttribute("aria-expanded", String(!expanded));
+      langDropdown.classList.toggle("open");
+    });
+
+    document.addEventListener("click", function () {
+      langBtn.setAttribute("aria-expanded", "false");
+      langDropdown.classList.remove("open");
+    });
+  }
+})();
+</script> <main>  <div class="page-container"> <h1>Contact me</h1> <div class="content prose"><!-- Contact page (decision #125 item 2, Vincent 2026-08-06). English is the
+     ORIGINAL; the French page is translated from it. Published in English and
+     French ONLY -- his "2 en-fr" scope; the other 18 locales are deferred.
+
+     LAYOUT, 2026-08-07 (Vincent: "I want the text to be more centered. Right
+     now, it's visually ugly."): the markdown TABLE is retired. A two-column
+     table renders left-aligned and full-width, which is what looked wrong on a
+     page holding six short lines. The accounts are now a centred list, one per
+     line, each label above its link -- readable at any width, no horizontal
+     rules, nothing stretched across the page. --><div style="text-align: center;">
+These are my accounts. Any of them reaches me.
+</div><div style="height: 2.5em;"></div><div class="contact-list" style="text-align: center; line-height: 2.1;">
+<strong>Email</strong><br>
+<a href="mailto:vincent@ecthrwatch.org">vincent@ecthrwatch.org</a><div style="height: 1.2em;"></div><p><strong>LinkedIn</strong><br>
+<a href="https://www.linkedin.com/in/x-v-france/">linkedin.com/in/x-v-france</a></p>
+<div style="height: 1.2em;"></div><p><strong>X</strong><br>
+<a href="https://x.com/ecthrwatch">x.com/ecthrwatch</a></p>
+<div style="height: 1.2em;"></div><p><strong>GitHub</strong><br>
+<a href="https://github.com/ecthrwatch">github.com/ecthrwatch</a></p>
+<div style="height: 1.2em;"></div><p><strong>Weibo</strong><br>
+<a href="https://weibo.com/7055094295">weibo.com/7055094295</a></p>
+<div style="height: 1.2em;"></div><p><strong>Telegram</strong><br>
+<a href="https://t.me/vincentlecorre">t.me/vincentlecorre</a></p>
+</div><div style="height: 2.5em;"></div><div style="text-align: center;">
+You can also send me an invitation to connect on LinkedIn, and I will accept it.
+</div></div> </div>  </main> <footer class="footer"> <div class="footer-links">  <a href="/">Home</a> <span class="footer-sep"> | </span> <a href="/contact-me/">Contact me</a> <span class="footer-sep"> | </span> <a href="https://archives.vincentlecorre.org">Archives</a>  </div> <div class="footer-org">Vincent Le Corre</div><div class="footer-also"><div>Visit also <a href="https://www.cia-in-china.com">CIA-in-China.com</a> (official website)</div><div>and</div><div>European Court of Human Rights Watch at <a href="https://www.ecthrwatch.org">ECtHRwatch.org</a></div></div> <div>&copy; 2021-2026 <a href="https://www.linkedin.com/in/x-v-france/">Vincent Le Corre</a></div> </footer> </body></html>
